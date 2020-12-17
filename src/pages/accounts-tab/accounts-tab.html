@@ -1,0 +1,99 @@
+<ion-header>
+  <ion-navbar>
+    <button start ion-button menuToggle icon-only color="dark">
+      <ion-icon name='menu'></ion-icon>
+    </button>
+    <ion-title> <span class="">Accounts</span></ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+
+  <div class="newborder text-center">
+    <medium id="passwordHelpInline" class="text-center text-white">
+      Your balances as at:
+    </medium> 
+
+    <div class="extralargetext text-white">
+      {{currentdate}}
+    </div>
+    
+  </div>
+  <div class="upperbtn bg-white padding text-center">
+    <button type="button" class="btn btn-outline-dark slightly-largetext mr-3" (click)="Buy()"><i class="fa fa-krw"></i>
+      Buy</button>
+    <button type="button" class="btn btn-outline-danger slightly-largetext mr-3" (click)="Send()"><i
+        class="fa fa-long-arrow-up"></i>
+      Send</button>
+    <button type="button" class="btn btn-outline-dark slightly-largetext" (click)="Recieve()"><i
+        class="fa fa-long-arrow-down"></i>
+      Recieve</button>
+  </div>
+  <div class=" padding-horizontal">
+    <div class="borderbottom ashborder wide mb-3 neg-margintop">
+      <div class="center">
+        <div text-center ion-text justify color="dark"
+          class="parts mediumtext bold z-10 white neg-marginbottom padding-horizontal half-paddingtop">
+          Online Accounts
+        </div>
+      </div>
+    </div>
+    <div class="dropdown-content-body dropdown-scrollable smallborder" *ngFor="let account of accounts">
+      <ul class="media-list double-marginbottom">
+        <li class="media mb-3">
+          <div class="position-relative mr-3 rounded-circle bg-dark  type1">
+            <div class="rounded-circle text-center margintop"><i class="fa fa-krw normaltext text-white mt-1"></i></div>
+          </div>
+          <div class="media-body read">
+            <div class="media-title">
+              <a href="#">
+                <span class="font-weight-bold slightly-largetext text-dark">{{account.name}}</span>
+                <span class="float-right font-size-sm text-dark mr-3">{{account.AccountBalance | currency:
+                      'NGN': '1.2-2'}}</span>
+              </a>
+            </div>
+
+            <span class="text-muted">{{account.AccountNumber}}</span>
+            <button ion-button small outline class="float-right mr-3" color="dark" (click)="onTransaction(account.id)">
+              Details
+            </button>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="borderbottom ashborder wide mb-3 neg-margintop hide">
+        <div class="center">
+          <div text-center ion-text justify color="dark"
+            class="parts mediumtext bold z-10 white neg-marginbottom padding-horizontal half-paddingtop">
+            Offline Account
+          </div>
+        </div>
+      </div>
+    <div class="dropdown-content-body dropdown-scrollable smallborder hide">
+      <ul class="media-list double-marginbottom">
+        <li class="media mb-3">
+          <div class="position-relative mr-3 rounded-circle bg-primary  type1">
+            <div class="rounded-circle text-center margintop"><i class="fa fa-krw normaltext text-white mt-1"></i></div>
+          </div>
+          <div class="media-body read">
+            <div class="media-title">
+              <a href="#">
+                <span class="font-weight-bold text-dark slightly-largetext">Offline Balance</span>
+                <span class="float-right font-size-sm text-dark mr-3"
+                  *ngIf="offlineBalance">{{offlineBalance | currency: 'NGN': '1.2-2'}}</span>
+                <span class="float-right font-size-sm text-dark mr-3"
+                  *ngIf="!offlineBalance">{{0 | currency: 'NGN': '1.2-2'}}</span>
+              </a>
+            </div>
+
+            <span class="text-muted">{{UDetails?.offlineID}}</span>
+            <button ion-button small outline class="float-right mr-3" color="dark" (click)="onTransaction2()">
+              Details
+            </button>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</ion-content>

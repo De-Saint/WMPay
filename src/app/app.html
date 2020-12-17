@@ -1,0 +1,60 @@
+<!-- logged out menu -->
+<ion-menu id="loggedOutMenu" [content]="content" [swipeEnabled]="false">
+    <ion-header>
+      <ion-toolbar color="" class="bar-profile">
+        <div class="profile">
+          <img class="profile-picture" src="assets/imgs/icon.png">
+          <h4 class="name">Guest</h4>
+          <h4 class="name">WealthMarketPay</h4>
+         
+        </div>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="outer-content cntstyle">
+      <ion-list>
+        <button ion-item menuClose *ngFor="let p of appPages" (click)="openPage(p)">
+          <i class="fa fa-{{p.icon}} {{p.color}} marginright slightly-largetext" aria-hidden="true"></i>
+          {{p.title}}
+        </button>
+        <button ion-item menuClose *ngFor="let p of loggedOutPages" (click)="openPage(p)">
+           <i class="fa fa-{{p.icon}} {{p.color}} marginright slightly-largetext" aria-hidden="true"></i>
+          {{p.title}}
+        </button>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <!-- logged in menu -->
+  <ion-menu id="loggedInMenu" [content]="content">
+    <ion-header>
+      <ion-toolbar color="primary" class="bar-profile">
+        <div class="profile">
+          <img class="profile-picture" src="assets/imgs/icon.png">
+          <h4 class="name">{{Userfullname}}</h4>
+          <h4 class="name">WealthMarketPay</h4>
+          <div class="">{{app_version}}</div>
+        </div>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="outer-content cntstyle">
+      <ion-list>
+        <button ion-item menuClose *ngFor="let p of appPages" (click)="openPage(p)">
+           <i class="fa fa-{{p.icon}} {{p.color}} marginright slightly-largetext" aria-hidden="true"></i>
+          <span ion-text [color]="isActive(p)">{{p.title}}</span>
+        </button>
+        <button ion-item menuClose *ngFor="let p of loggedInPages" (click)="openPage(p)">
+           <i class="fa fa-{{p.icon}} {{p.color}} marginright slightly-largetext" aria-hidden="true"></i>
+          <span ion-text [color]="isActive(p)">{{p.title}}</span>
+        </button>
+      </ion-list>
+      <ion-list>
+       
+        <button ion-item menuClose (click)="openHelp()">
+          <ion-icon item-start name="hammer"></ion-icon>
+          Help
+        </button>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <!-- main navigation -->
+  <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
+  

@@ -1,0 +1,38 @@
+<ion-content padding>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-searchbar [(ngModel)]="searchTerm" (ionCancel)="onCancel($event)" [showCancelButton]="true"
+    (ionClear)="onClear($event)" (ionInput)="searchContact()" class="half-margintop"></ion-searchbar>
+  <div class="dropdown-content-body dropdown-scrollable">
+    <ul class="media-list mt-3">
+      <li class="media mb-3" *ngFor="let contact of contacts" (click)="goToDetails(contact)">
+        <div class="position-relative mr-3  pt-3">
+          <img src="assets/imgs/icon.png" width="36" height="36" class="rounded-circle" alt="">
+        </div>
+        <div class="media-body">
+          <div class="media-title">
+            <div class="">
+              <span class="font-weight-semibold">
+                <i class="fa fa-user half-marginright"></i>{{contact.user_name}}</span>
+              <span class="text-muted float-right font-size-sm">{{contact.usertype}}</span>
+              <div style="clear: both;"></div>
+              <span class="tefont-weight-semibold"><i
+                  class="fa fa-envelope-o  half-marginright"></i>{{contact.email}}</span>
+            </div>
+          </div>
+          <span class="text-muted"><i class="fa fa-phone  half-marginright"></i>{{contact.phone_number}}</span>
+        </div>
+      </li>
+    </ul>
+    <div class="marginleft paddingleft marginright paddingright marginbottom margintop"
+      *ngIf="nocontact === 'nocontact'">
+      No Contacts
+    </div>
+  </div>
+  <ion-fab top right class="mini-margintop">
+    <button ion-fab mini (click)="NewContact()" color="dark">
+      <i class="fa fa-plus slightly-largetext" aria-hidden="true"></i>
+    </button>
+  </ion-fab>
+</ion-content>

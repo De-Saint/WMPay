@@ -1,0 +1,29 @@
+<ion-content padding>
+  <div class="dropdown-content-body dropdown-scrollable ">
+    <ul class="media-list mt-2">
+      <li class="media mb-3 " *ngFor="let cashout of cashoutrequests">
+        <div class="position-relative mr-3">
+          <img src="assets/imgs/icon.png" width="36" height="36" class="rounded-circle" alt="">
+        </div>
+        <div class="media-body read">
+          <div class="media-title ">
+            <a href="#">
+              <span class="font-weight-bold">{{cashout.BankName}}</span>
+              <span class="text-muted float-right font-size-sm">{{cashout.date}}</span>
+            </a>
+          </div>
+
+          <span class="text-muted bold">{{cashout.amount | currency: 'NGN': '1.2-2'}}</span> -
+          <span class="text-muted">{{cashout.accountType }}</span> -
+          <span class="text-muted">{{cashout.accountNumber }}</span>
+          <span class="float-right text-primary bold" *ngIf="cashout.status === 'Pending'">{{cashout.status}}</span>
+          <span class="float-right text-danger bold" *ngIf="cashout.status === 'Rejected'">{{cashout.status}}</span>
+          <span class="float-right text-success bold" *ngIf="cashout.status === 'Approved'">{{cashout.status}}</span>
+        </div>
+      </li>
+    </ul>
+    <!-- <div class="marginleft paddingleft marginright paddingright marginbottom margintop" *ngIf="noinboxmsg === 'noinboxmsg'">
+      No Messages
+    </div> -->
+  </div>
+</ion-content>

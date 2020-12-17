@@ -1,0 +1,206 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Buy Warrants
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="card mt-3">
+    <ion-segment [(ngModel)]="warrants">
+      <ion-segment-button value="par" (click)="BuyAtPar()">
+        AT PAR
+      </ion-segment-button>
+      <ion-segment-button value="reflation" (click)="BuyWithReflation()">
+        GET DOUBLE @PAR
+      </ion-segment-button>
+    </ion-segment>
+    <div class="card-body">
+      <div [ngSwitch]="warrants">
+        <ion-list *ngSwitchCase="'par'">
+          <div class="text-center slightly-largetext mt-3 bold mb-3">
+            How much Cash would you like to Have in Market Warrants
+          </div>
+          <form [formGroup]="BuyAtParForm" class="half-margintop">
+            <div class="form-group input-group-lg mt-3">
+              <label for="Name">Name</label>
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fa fa-user-circle slightly-largetext"></i></span>
+                </div>
+                <input type="text" formControlName="fullname" name="fullname" readonly [(ngModel)]="fullname"
+                  class="form-control form-control-lg slightly-largetext">
+              </div>
+            </div>
+            <div class="form-group input-group-lg mt-3">
+              <label for="Email">Email</label>
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fa fa-envelope slightly-largetext"></i></span>
+                </div>
+                <input type="email" formControlName="email" name="email" readonly [(ngModel)]="email"
+                  class="form-control form-control-lg slightly-largetext">
+              </div>
+            </div>
+            <div class="form-group input-group-lg mt-3">
+              <label for="header">Amount</label>
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fa fa-sort-numeric-asc slightly-largetext"></i></span>
+                </div>
+                <input formControlName="amount" maxlength="7" [(ngModel)]="amount"
+                  (ngModelChange)="onExpectedAmount($event)" name="amount" required placeholder="Enter the Amount"
+                  class="form-control form-control-lg slightly-largetext">
+                <div class="input-group-append">
+                  <span class="input-group-text slightly-largetext">00</span>
+                </div>
+
+              </div>
+              <div class=" mb-3 mt-3">
+                <div class="left">Minimum Amount</div>
+                <div class="right">NGN 100.00</div>
+                <div style="clear:both;"></div>
+              </div>
+              <div class="mt-3 mt-3">
+                <div class="left">Maximum Amount</div>
+                <div class="right">NGN 999,000.00</div>
+                <div style="clear:both;"></div>
+              </div>
+            </div>
+            <div class="card card-header text-center">Expected Amount</div>
+            <div class="form-group input-group-lg mt-3">
+              <div class=" mb-3 mt-3">
+                <div class="left bold">Warrants</div>
+                <div class="right bold">{{WarrantsAmt | currency: 'NGN': '1.2-2'}}</div>
+                <div style="clear:both;"></div>
+              </div>
+              <hr class="bold border">
+              <!-- <div class="mt-3 mt-3">
+                <div class="left bold">Reflation Righs</div>
+                <div class="right bold">{{RRightsAmt | currency: 'NGN': '1.2-2'}}</div>
+                <div style="clear:both;"></div>
+              </div> -->
+              <div class="mt-3 mt-3">
+                <div class="left bold">Par Cashing Righs</div>
+                <div class="right bold">{{PCRightsAmt | currency: 'NGN': '1.2-2'}}</div>
+                <div style="clear:both;"></div>
+              </div>
+            </div>
+
+            <div class="text-center mt-3">
+              <button angular4-paystack [key]="public_key" [email]="email" [amount]="amountToPay * 100" [ref]="random_id"
+                [channels]="channels" (close)="paymentCancel()" (error)="paymentError()" (callback)="paymentDone($event, 'single')" (click)="onPay()"
+                [metadata]="{ custom_fields: [{display_name: 'Customer Name', variable_name: 'Customer Name', value: fullname},
+                {display_name: 'Payment Type', variable_name: 'Payment Type', value: 'Buy Warrants With Cash' }] }"
+                 class="btn btn-dark btn-lg btn-block slightly-largetext mb-3">
+                Buy Warrants (With PayStack)
+              </button>
+            </div>
+
+            <div class="card-header text-center text-dark bold">{{loadmsg}}</div>
+          </form>
+          
+        </ion-list>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <ion-list *ngSwitchCase="'reflation'">
+          <div class="text-center slightly-largetext mt-3 bold mb-3">
+            How much Cash would you like to Have in Market Warrants
+          </div>
+          <form [formGroup]="BuyAtDoubleForm" class="half-margintop">
+            <div class="form-group input-group-lg mt-3">
+              <label for="Name">Name</label>
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fa fa-user-circle slightly-largetext"></i></span>
+                </div>
+                <input type="text" formControlName="fullname2" name="fullname2" readonly [(ngModel)]="fullname2"
+                  class="form-control form-control-lg slightly-largetext">
+              </div>
+            </div>
+            <div class="form-group input-group-lg mt-3">
+              <label for="Email">Email</label>
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fa fa-envelope slightly-largetext"></i></span>
+                </div>
+                <input type="email" formControlName="email2" name="email2" readonly [(ngModel)]="email2"
+                  class="form-control form-control-lg slightly-largetext">
+              </div>
+            </div>
+            <div class="form-group input-group-lg mt-3">
+              <label for="header">Amount</label>
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fa fa-sort-numeric-asc slightly-largetext"></i></span>
+                </div>
+                <input formControlName="amount2" maxlength="7" [(ngModel)]="amount2"
+                  (ngModelChange)="onExpectedAmount2($event)" name="amount2" required placeholder="Enter the Amount"
+                  class="form-control form-control-lg slightly-largetext">
+                <div class="input-group-append">
+                  <span class="input-group-text slightly-largetext">00</span>
+                </div>
+
+              </div>
+              <div class=" mb-3 mt-3">
+                <div class="left">Minimum Amount</div>
+                <div class="right">NGN 100.00</div>
+                <div style="clear:both;"></div>
+              </div>
+              <div class="mt-3 mt-3">
+                <div class="left">Maximum Amount</div>
+                <div class="right">NGN 999,000.00</div>
+                <div style="clear:both;"></div>
+              </div>
+            </div>
+            <div class="card card-header text-center">Expected Amount</div>
+
+            <div class="form-group input-group-lg mt-3">
+              <div class=" mb-3 mt-3">
+                <div class="left bold">Warrants</div>
+                <div class="right bold">{{WarrantsAmt2 | currency: 'NGN': '1.2-2'}}</div>
+                <div style="clear:both;"></div>
+              </div>
+              <hr class="bold border">
+              <!-- <div class="mt-3 mt-3">
+                <div class="left bold">Reflation Righs</div>
+                <div class="right bold">{{RRightsAmt2 | currency: 'NGN': '1.2-2'}}</div>
+                <div style="clear:both;"></div>
+              </div> -->
+              <div class="mt-3 mt-3">
+                <div class="left bold">Par Cashing Righs</div>
+                <div class="right bold">{{PCRightsAmt2 | currency: 'NGN': '1.2-2'}}</div>
+                <div style="clear:both;"></div>
+              </div>
+            </div>
+
+            <div class="text-center mt-3">
+              <button angular4-paystack [key]="public_key" [email]="email2" [amount]="amount2ToPay * 100 * 2" [ref]="random_id"
+                [channels]="channels" (close)="paymentCancel()" (callback)="paymentDone($event, 'double')"  (click)="onPay2()"
+                [metadata]="{ custom_fields: [{display_name: 'Customer Name', variable_name: 'Customer Name', value: fullname},
+                {display_name: 'Payment Type', variable_name: 'Payment Type', value: 'Buy Warrants With Cash' }] }"
+                 class="btn btn-dark btn-lg btn-block slightly-largetext mb-3">
+                Buy Warrants (With PayStack)
+              </button>
+            </div>
+            <div class="card-header text-center text-dark bold">{{loadmsg2}}</div>
+          </form>
+        </ion-list>
+      </div>
+
+
+    </div>
+  </div>
+</ion-content>

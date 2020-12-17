@@ -1,0 +1,128 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Details</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="text-center bg-dark rounded-top mb-3 text-white rounded-bottom half-padding">
+    <div class="largetext bold">{{details?.AccountDefinitionName}}</div>
+    <div class="slightly-largetext bold">{{details?.Amount | currency: 'NGN': '1.2-2' }}</div>
+    <div class="mediumtext bold pb-1">{{details?.NewDate}} - {{details?.NewTime }} </div>
+  </div>
+  <ion-segment [(ngModel)]="entry">
+    <ion-segment-button value="debit" (click)="DebitEntry()">
+      Debit Entry
+    </ion-segment-button>
+    <ion-segment-button value="credit" (click)="CreditEntry()">
+      Credit Entry
+    </ion-segment-button>
+  </ion-segment>
+  <div [ngSwitch]="entry">
+    <ion-list *ngSwitchCase="'debit'">
+      <div class="card card-header text-left mt-3 font-weight-bold">
+        Accounts
+      </div>
+      <form class="padding-horizontal">
+        <div class="form-group" *ngIf="details?.FromUserID === userid">
+          <label class="bold">Name</label>
+          <div class="">{{details?.PrimaryAccountName}}</div>
+        </div>
+        <div class="form-group" *ngIf="details?.FromUserID === userid">
+          <label class="bold">Number</label>
+          <div class="">{{details?.DebitAccountNumber }}</div>
+        </div>
+        <div class="form-group" *ngIf="details?.FromUserID === userid">
+          <label class="bold">Balance</label>
+          <div class="" *ngIf="details?.FromUserNewBalance" >{{details?.FromUserNewBalance  | currency: 'NGN': '1.2-2'}}</div>
+          <div class="" *ngIf="!details?.FromUserNewBalance">{{0  | currency: 'NGN': '1.2-2'}}</div>
+         </div>
+         <div class="form-group"  *ngIf="details?.AppliedCharge !== '0'">
+          <label class="bold">Charges</label>
+          <div class="">{{details?.AppliedCharge | currency: 'NGN': '1.2-2'}}</div>
+        </div>
+      </form>
+      <div class="card card-header text-left mt-1 font-weight-bold">
+        Transactions
+      </div>
+      <form class="padding-horizontal">
+        <div class="form-group">
+          <label class="bold">Type</label>
+          <div class="">{{details?.NameOfTransaction}}</div>
+        </div>
+        <div class="form-group">
+          <label class="bold">Reference</label>
+          <div class="">{{details?.TransactionRef}}</div>
+        </div>
+      </form>
+      <div class="card card-header text-left mt-1 font-weight-bold">
+        Notes
+      </div>
+      <form class="padding-horizontal">
+        <div class="form-group">
+          <label class="bold">Comment</label>
+          <div class="">{{details?.Comment}}</div>
+        </div>
+        <div class="form-group">
+          <label class="bold">Description</label>
+          <div class="">{{details?.Description}}</div>
+        </div>
+      </form>
+    </ion-list>
+
+
+
+
+    
+    <ion-list *ngSwitchCase="'credit'">
+      <div class="card card-header text-left mt-3 font-weight-bold">
+        Accounts
+      </div>
+      <form class="padding-horizontal">
+        <div class="form-group" *ngIf="details?.ToUserID === userid">
+          <label class="bold">Name</label>
+          <div class="">{{details?.OtherAccountName}}</div>
+        </div>
+        <div class="form-group" *ngIf="details?.ToUserID === userid">
+          <label class="bold">Number</label>
+          <div class="">{{details?.CreditAccountNumber}}</div>
+        </div>
+        <div class="form-group" *ngIf="details?.ToUserID === userid">
+          <label class="bold">Balance</label>
+          <div class="" *ngIf="details?.ToUserNewBalance" >{{details?.ToUserNewBalance  | currency: 'NGN': '1.2-2'}}</div>
+          <div class="" *ngIf="!details?.ToUserNewBalance">{{0  | currency: 'NGN': '1.2-2'}}</div>
+        </div>
+        <div class="form-group"  *ngIf="details?.AppliedCharge !== '0'">
+          <label class="bold">Charges</label>
+          <div class="">{{details?.AppliedCharge | currency: 'NGN': '1.2-2'}}</div>
+        </div>
+      </form>
+      <div class="card card-header text-left mt-1 font-weight-bold">
+        Transactions
+      </div>
+      <form class="padding-horizontal">
+        <div class="form-group">
+          <label class="bold">Type</label>
+          <div class="">{{details?.NameOfTransaction}}</div>
+        </div>
+        <div class="form-group">
+          <label class="bold">Reference</label>
+          <div class="">{{details?.TransactionRef}}</div>
+        </div>
+      </form>
+      <div class="card card-header text-left mt-1 font-weight-bold">
+        Notes
+      </div>
+      <form class="padding-horizontal">
+        <div class="form-group">
+          <label class="bold">Comment</label>
+          <div class="">{{details?.Comment}}</div>
+        </div>
+        <div class="form-group">
+          <label class="bold">Description</label>
+          <div class="">{{details?.Description}}</div>
+        </div>
+      </form>
+    </ion-list>
+  </div>
+</ion-content>

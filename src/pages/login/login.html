@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-navbar color="">
+    <ion-title>Login to your account</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="logoimg double-marginbottom">
+    <img src="assets/imgs/icon.png" />
+  </div>
+
+  <div class="loginForm double-marginbottom double-margintop">
+    <form #loginForm="ngForm">
+      <div class="mt-3 mb-3">
+          <label for="Email">Email/Phone Number</label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroupPrepend"> <i class="fa fa-envelope slightly-largetext"></i></span>
+          </div>
+          <input type="email" [(ngModel)]="login.emailphone" name="emailphone" required class="form-control form-control-lg slightly-largetext" 
+            placeholder="Enter your Email">
+        </div>
+      </div>
+
+      <div class="double-margintop">
+        <label for="Password">Password</label>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fa fa-key slightly-largetext"></i></span>
+          </div>
+          <input  #x type="password" [(ngModel)]="login.password" name="password" class="form-control form-control-lg slightly-largetext"
+            placeholder="Enter your password">
+          <div class="input-group-append" (click)="x.type=x.type=='password'?'text':'password'">
+            <span class="input-group-text"><i class="fa fa-eye slightly-largetext"></i></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center double-margintop">
+        <div class="normaltext marginbottom" ion-text color="primary" (click)="forgotPass()">Forgot Password?</div>
+      </div>
+
+      <div class="text-center double-marginbottom">
+        <div class="marginbottom">
+          <button type="submit" class="btn btn-dark btn-lg btn-block slightly-largetext" (click)="onLogin(loginForm)"><i class="fa fa-sign-in slightly-largetext half-marginright"></i> LogIn</button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+  <div class="borderbottom ashborder wide marginbottom margintop">
+    <div class="center">
+      <div text-center ion-text justify color="dark"
+        class="parts mediumtext bold z-10 white neg-marginbottom padding-horizontal half-paddingtop">
+        Don't have an account?
+      </div>
+    </div>
+  </div>
+  <div class="center double-margintop">
+    <button type="button" class="btn btn-warning btn-lg btn-block slightly-largetext" (click)="onRegister()"><i class="fa fa-user-plus slightly-largetext half-marginright"></i> Create Your Account</button>
+  </div>
+</ion-content>

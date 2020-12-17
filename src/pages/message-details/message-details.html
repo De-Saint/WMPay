@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Message Details</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only color="dark" (click)="onDelete()">
+        <ion-icon name="trash"></ion-icon>
+      </button>
+      <button ion-button icon-only color="dark" *ngIf="ntwk == 'offline'"  (click)="resendMessage()">
+          <ion-icon name="sync"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="card border-0">
+    <div class="card-body">
+      <div class="mb-4">
+        <div class="mb-3 text-center">
+          <a href="#" class="d-inline-block">
+            <img src="assets/imgs/icon.png" class="img-fluid" alt="" width="46" height="46">
+          </a>
+        </div>
+
+        <h4 class="font-weight-semibold mb-1 text-center">
+          <a href="#" class="text-dark"> {{msg?.subject}}</a>
+        </h4>
+        <div class="double-padding-horizontal text-center">
+          <ul class="list-inline list-inline-dotted text-muted mb-3 pl-3 ">
+            <li class="list-inline-item">By <a href="#" class="text-muted">{{msg?.SenderName}}</a></li>
+            <li class="list-inline-item">{{msg.msgdate}} - {{msg.msgtime}}</li>
+          </ul>
+
+        </div>
+
+
+        <div class="mb-3">
+          <p>{{msg.body}}</p>
+           </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

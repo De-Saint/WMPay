@@ -1,0 +1,49 @@
+<ion-content padding>
+  <form [formGroup]="addBankForm" class="half-margintop">
+    <div class="form-group input-group-lg mt-3" *ngFor="let bank of banks">
+      <label for="header">Bank Name</label>
+      <select formControlName="bankNameID" name="bankNameID" class="form-control form-control-lg custom-select slightly-largetext"
+        (onChange)="($event)">
+        <option value="" disabled selected="selected">Select Bank Name</option>
+        <option *ngFor="let bk of bank" value="{{ bk.id }}">{{ bk.name}}</option>
+      </select>
+    </div>
+    <div class="form-group input-group-lg mt-3">
+      <label for="header">Account Type</label>
+      <select formControlName="bankAcctType" name="bankAcctType" class="form-control form-control-lg custom-select slightly-largetext">
+        <option value="" disabled selected="selected">Select Account Type</option>
+        <option value="Savings">Savings</option>
+        <option value="Current">Current</option>
+        <option value="Fixed Deposit">Fixed Deposit</option>
+      </select>
+    </div>
+    <div class="form-group input-group-lg mt-3">
+      <label for="Name">Account Number</label>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="fa fa-sort-numeric-asc slightly-largetext"></i></span>
+        </div>
+        <input type="text" formControlName="bankAcctNumber" name="bankAcctNumber" class="form-control form-control-lg slightly-largetext"
+          placeholder="Enter your Account Number">
+      </div>
+    </div>
+    <div class="form-group input-group-lg mt-3">
+      <label for="BVNNumber">BVN Number <small><b>(Optional)</b></small></label>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="fa fa-sort-numeric-asc slightly-largetext"></i></span>
+        </div>
+        <input type="text" formControlName="bankAcctBVN" name="bankAcctBVN" 
+          class="form-control form-control-lg slightly-largetext" placeholder="Enter your BVN Number">
+      </div>
+    </div>
+
+    <div class="text-center">
+      <button class="btn btn-dark btn-block btn-lg slightly-largetext" (click)="onAddBank()" type="submit">Add Bank</button>
+    </div>
+
+  </form>
+  <div class="text-center bold text-danger mt-3 mb-3">Please enter your primary account number, only a single bank account detail is allowed.</div>
+  <div class="text-center bold text-danger mt-3">Adding your BVN increases your CashOut approval process.</div>
+ 
+</ion-content>

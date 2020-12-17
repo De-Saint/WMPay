@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>QR-Code Online</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <div class="card text-center ">
+    <div class="card-header">
+      Recieve Market Warrants
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">My Payment QR-Code</h5>
+      <p class="card-text">
+        Recieve Market Warrant by displaying your Generated Invoice QR-Code for Scanning
+      </p>
+      <button type="button" class="btn btn-dark slightly-largetext btn-lg mb-3" (click)="onGenerateCode()"><i
+          class="fa fa-qrcode  mr-1"></i> Generate Invoice</button>
+      <div class="">
+        <ngx-qrcode [qrc-element-type]="url" [qrc-value]="createdCode"></ngx-qrcode>
+      </div>
+    </div>
+  </div>
+  <div class="borderbottom ashborder wide marginbottom margintop">
+    <div class="center">
+      <div text-center ion-text justify color="dark"
+        class="parts mediumtext bold z-10 white neg-marginbottom padding-horizontal half-paddingtop">
+        Or
+      </div>
+    </div>
+  </div>
+  <div class="card text-center double-margintop">
+    <div class="card-header">
+      Send Market Warrants
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Scan the Beneficiary's QR-Code</h5>
+      <p class="card-text"> To make payment/transfer.</p>
+      <button type="button" class="btn btn-dark slightly-largetext btn-lg" (click)="onScanUserCode()"><i
+          class="fa fa-qrcode  mr-1"></i> Scan
+        Code</button>
+    </div>
+  </div>
+</ion-content>

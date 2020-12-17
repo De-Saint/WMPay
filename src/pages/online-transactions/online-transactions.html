@@ -1,0 +1,70 @@
+<ion-content padding>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <div class="dropdown-content-body dropdown-scrollable ">
+    <ul
+      class="media-list mt-2"
+      *ngFor="let transfer of transfers"
+      (click)="onGotoDetails(transfer)"
+    >
+      <li class="media mb-3 " *ngIf="transfer.FromUserID === userid">
+        <div class="position-relative mr-3 rounded-circle bg-danger type1">
+          <div class="rounded-circle text-center margintop">
+            <i class="fa fa-exchange normaltext text-white"></i>
+          </div>
+        </div>
+        <div class="media-body read">
+          <div class="media-title">
+            <a href="#">
+              <div class="float-left">
+                <span class="font-weight-bold text-dark">
+                  {{transfer.NameOfTransaction}}
+                </span>
+                <br />
+                <span class="text-danger font-weight-semibold">{{transfer.NewDate}}</span>
+              </div>
+              <span class="float-right font-size-sm text-danger"
+                >{{transfer.DebitAmount | currency: 'NGN': '1.2-2'}}</span
+              >
+            </a>
+          </div>
+          <div style="clear: both;"></div>
+          <span class="text-muted">{{transfer.Comment}}</span>
+        </div>
+      </li>
+
+      <li class="media mb-3 " *ngIf="transfer.ToUserID === userid">
+        <div class="position-relative mr-3 rounded-circle bg-success type1">
+          <div class="rounded-circle text-center margintop">
+            <i class="fa fa-exchange normaltext text-white"></i>
+          </div>
+        </div>
+        <div class="media-body read">
+          <div class="media-title ">
+            <a href="#">
+              <div class="float-left">
+                <span class="font-weight-bold text-dark">
+                  {{transfer.NameOfTransaction}}
+                </span>
+                <br />
+                <span class="text-success font-weight-semibold">{{transfer.NewDate}}</span>
+              </div>
+              <span class="text-success float-right font-size-sm "
+                >{{transfer.CreditAmount | currency: 'NGN': '1.2-2'}}</span
+              >
+            </a>
+          </div>
+          <div style="clear: both;"></div>
+          <span class="text-muted">{{transfer.Comment}}</span>
+        </div>
+      </li>
+    </ul>
+    <div
+      class="marginleft paddingleft marginright paddingright marginbottom margintop"
+      *ngIf="errormsg === 'No Transactions'"
+    >
+      No Recent Transactions
+    </div>
+  </div>
+</ion-content>

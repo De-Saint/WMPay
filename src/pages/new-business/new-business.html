@@ -1,0 +1,98 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>New Business</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="slideBizForm" class="half-margintop">
+    <div class="form-group input-group-lg mt-3" *ngFor="let bizind of bizindustries">
+      <label for="header">Business Industry</label>
+      <select formControlName="bizindustry" class="form-control form-control-lg custom-select slightly-largetext"
+        (ngModelChange)="onBusinessIndustriesSelect($event)">
+        <option value="" disabled selected="selected">Select Business Industry</option>
+        <option *ngFor="let bizindustry of bizind" value="{{ bizindustry.id }}">{{ bizindustry.name}}</option>
+      </select>
+    </div>
+    <div class="form-group input-group-lg mt-3" *ngFor="let bizt of biztypes">
+      <label for="header">Business Type</label>
+      <select formControlName="biztype" class="form-control form-control-lg custom-select slightly-largetext">
+        <option value="" disabled selected="selected">Select Business Type</option>
+        <option *ngFor="let biztype of bizt" value="{{ biztype.id }}">{{ biztype.name}}</option>
+      </select>
+    </div>
+    <div class="form-group input-group-lg mt-3">
+      <label for="Name">Business Name</label>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="fa fa-user-circle slightly-largetext"></i></span>
+        </div>
+        <input type="text" formControlName="bizname" class="form-control form-control-lg slightly-largetext"
+          placeholder="Enter the Business Name">
+      </div>
+    </div>
+    <div class="form-group input-group-lg mt-3">
+      <label for="Email">Business Email</label>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="fa fa-envelope slightly-largetext"></i></span>
+        </div>
+        <input type="email" formControlName="bizemail" (ngModelChange)="onBizCheckEmail($event)"
+          class="form-control form-control-lg slightly-largetext" placeholder="Enter the Business Email">
+      </div>
+    </div>
+    <div class="form-group input-group-lg mt-3">
+      <label for="Phone">Business Phone</label>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="fa fa-phone slightly-largetext"></i></span>
+        </div>
+        <input type="tel" formControlName="bizphone" class="form-control form-control-lg slightly-largetext"
+          name="bizphone" placeholder="Enter the Business Phone">
+      </div>
+    </div>
+    <div class="form-group input-group-lg mt-3">
+      <label for="Website">Business Website Link</label>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="fa fa-globe slightly-largetext"></i></span>
+        </div>
+        <input type="text" formControlName="bizwebaddress" class="form-control form-control-lg slightly-largetext"
+          name="bizwebaddress" placeholder="Enter the Business Website Link">
+      </div>
+    </div>
+    <div class="form-group input-group-lg mt-3">
+      <label for="DFounded">Business Date Founded</label>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="fa fa-calendar slightly-largetext"></i></span>
+        </div>
+        <input type="date" formControlName="bizdatefounded" id="datepicker"
+          class="form-control form-control-lg slightly-largetext datepicker" displayFormat="YYYY-MM-DD"
+          value="01-01-2017" name="bizdatefounded" placeholder="Enter the Business Date Founded">
+      </div>
+    </div>
+
+    <div class="form-group input-group-lg mt-3">
+      <label for="CACNumber">Business CAC Number</label>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">RC</span>
+        </div>
+        <input type="text" formControlName="bizcacnumber" class="form-control form-control-lg slightly-largetext"
+          name="bizcacnumber" placeholder="Enter the Business CAC Number ">
+      </div>
+    </div>
+
+    <div class="form-group mt-3">
+      <label for="Description">Business Description</label>
+      <textarea class="form-control slightly-largetext" formControlName="bizdesc" rows="6"
+        placeholder="Enter the Business Description" name="bizdesc"></textarea>
+    </div>
+    <div class="text-center">
+      <button class="btn btn-dark btn-block btn-lg slightly-largetext" (click)="onSaveBusiness()" type="submit">List
+        Business</button>
+    </div>
+
+  </form>
+</ion-content>

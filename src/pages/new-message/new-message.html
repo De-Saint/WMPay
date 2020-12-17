@@ -1,0 +1,103 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>New Message</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="slideNewMsgForm"  class="half-margintop">
+    <ion-segment [(ngModel)]="ctact" [ngModelOptions]="{standalone: true}">
+      <ion-segment-button value="searchC" (click)="searchCtact()">
+        Search User
+      </ion-segment-button>
+      <ion-segment-button value="selectC" (click)="selectCtact()">
+        Select Contact
+      </ion-segment-button>
+    </ion-segment>
+
+    <div [ngSwitch]="ctact">
+      <ion-list *ngSwitchCase="'searchC'">
+        <div class="card text-center mt-3 mb-3 ">
+          <h5 class="card-header">Search Users</h5>
+          <div class="card-body">
+            <div class="input-group mb-3">
+              <input type="text" formControlName="searchTerm" name="searchTerm" value=""
+                class="form-control form-control-lg" placeholder="Search By Email/Phone/Account Number">
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button" (click)="onSearch()" id="button-addon2"><i
+                    class="fa fa-search slightly-largetext half-marginright"></i>Search</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </ion-list>
+      <ion-list *ngSwitchCase="'selectC'">
+        <div class="card text-center mt-3 mb-3">
+          <h5 class="card-header">Select Contact</h5>
+          <div class="card-body">
+            <select id="selectcontid" formControlName="selectcontid"
+              class="form-control form-control-lg custom-select slightly-largetext" (ngModelChange)="onSelect($event)">
+              <option value="" disabled selected="selected">Select your contact</option>
+              <option *ngFor="let contact of contacts" value="{{ contact.userId }}">{{ contact.user_name}}</option>
+              <option value="add">Add Contact</option>
+            </select>
+          </div>
+          <button class="btn btn-warning btn-block btn-lg slightly-largetext" (click)="onAddContact()"
+        type="button">Add Contact</button>
+        </div>
+
+      </ion-list>
+    </div>
+
+
+
+    <div class="card text-center" *ngIf="ContactResult?.BeneficiaryName">
+      <h5 class="card-header">Beneficiary Details</h5>
+      <div class="card-body">
+        <div class="dropdown-content-body dropdown-scrollable">
+          <ul class="media-list mt-2">
+            <li class="media mb-3">
+              <div class="position-relative mr-3 pt-3">
+                <img src="assets/imgs/icon.png" width="36" height="36" class="rounded-circle" alt="">
+              </div>
+              <div class="media-body">
+                <h2 class="hide">{{ContactResult?.Beneficiaryid}}</h2>
+                <div class="media-title">
+                  <span class="font-weight-semibold float-left"><i
+                      class="fa fa-user half-marginright"></i>{{ContactResult?.BeneficiaryName}}</span>
+                </div>
+                <div style="clear: both;"></div>
+                <span class="text-muted left"><i
+                    class="fa fa-phone  half-marginright"></i>{{ContactResult?.BeneficiaryPhone}}</span>
+                <span class="text-muted float-right font-size-sm"><i
+                    class="fa fa-credit-card half-marginright"></i>{{ContactResult?.BeneficiaryAcctNo}}</span>
+
+                <div style="clear: both;"></div>
+                <span class="text-muted left">
+                  <i class="fa fa-envelope-o  half-marginright"></i>{{ContactResult?.BeneficiaryEmail}}</span>
+                <input type="hidden" formControlName="selectedcontactid" name="selectedcontactid"
+                  value="{{ContactResult?.Beneficiaryid}}" class="form-control form-control-lg slightly-largetext">
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group input-group-lg mt-3">
+      <label for="header">Title</label>
+      <input type="text" class="form-control form-control-lg slightly-largetext" name="title" formControlName="title"
+        placeholder="Enter the Message Title">
+    </div>
+    <div class="form-group mt-3">
+      <label for="body">Body</label>
+      <textarea class="form-control slightly-largetext" rows="10" placeholder="Enter the Message Body" name="body"
+        formControlName="body"></textarea>
+    </div>
+    <div class="text-center">
+      <button class="btn btn-dark btn-lg btn-block slightly-largetext" (click)="onSendMessage(ContactResult?.Beneficiaryid)"
+        type="submit">Send Message</button>
+    </div>
+  </form>
+</ion-content>

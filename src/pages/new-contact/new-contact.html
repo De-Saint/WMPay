@@ -1,0 +1,87 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>New Contact</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <div class="card">
+      <div class="card-header text-center bold">
+        Search The User
+      </div>
+      <div class="card-body">
+        <!-- <h5 class="card-title text-center bold">Search the user</h5> -->
+        <p class="card-text text-center"> To add the user to your contact list.</p>
+
+        <ion-searchbar [(ngModel)]="searchTerm" (ionCancel)="onCancel($event)" [showCancelButton]="true"
+          (ionClear)="onClear($event)" (ionInput)="searchContact()" class=""></ion-searchbar>
+        <div class="dropdown-content-body dropdown-scrollable border-top">
+          <ul class="media-list mt-3">
+            <li class="media mb-3" *ngFor="let contact of contacts" (click)="goToDetails(contact.userId, contact.user_name)">
+              <div class="position-relative mr-3  pt-3">
+                <img src="assets/imgs/icon.png" width="36" height="36" class="rounded-circle" alt="">
+              </div>
+              <div class="media-body">
+                <div class="media-title">
+                  <div class="">
+                    <span class="font-weight-semibold">
+                      <i class="fa fa-user half-marginright"></i>{{contact.user_name}}</span>
+                    <span class="text-muted float-right font-size-sm">{{contact.usertype}}</span>
+
+                    <div style="clear: both;"></div>
+                    <span class="tefont-weight-semibold"><i
+                        class="fa fa-envelope-o  half-marginright"></i>{{contact.email}}</span>
+                        <span class="text-muted float-right"><i class="fa fa-plus-circle largetext  half-marginright text-primary"></i></span>
+                  </div>
+                </div>
+                <span class="text-muted"><i class="fa fa-phone  half-marginright"></i>{{contact.phone_number}}</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="borderbottom ashborder wide marginbottom margintop">
+      <div class="center">
+        <div text-center ion-text justify color="dark"
+          class="parts mediumtext bold z-10 white neg-marginbottom padding-horizontal half-paddingtop">
+          OR
+        </div>
+      </div>
+    </div>
+
+    <div class="card text-center">
+      <div class="card-header">
+        Scan The User's WM-Code
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Scan the User's WM-Code</h5>
+        <p class="card-text"> To add the user to your contact list.</p>
+        <button type="button" class="btn btn-dark slightly-largetext btn-lg" (click)="onScanUserCode()" ><i class="fa fa-qrcode  mr-1"></i> Scan
+          Code</button>
+      </div>
+    </div>
+    <div class="borderbottom ashborder wide marginbottom margintop">
+      <div class="center">
+        <div text-center ion-text justify color="dark"
+          class="parts mediumtext bold z-10 white neg-marginbottom padding-horizontal half-paddingtop">
+          My WM-Code
+        </div>
+      </div>
+    </div>
+    <div class="card text-center">
+      <div class="card-header">
+        My Generated WM-Code
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">My WM-Code</h5>
+        <p class="card-text">
+          Scan this Code to Add <span class="bold">Me</span> To Your Contact List.
+        </p>
+        <div class="">
+          <ngx-qrcode [qrc-element-type]="url" [qrc-value]="createdCode"></ngx-qrcode>
+        </div>
+      </div>
+    </div>
+  </ion-content>

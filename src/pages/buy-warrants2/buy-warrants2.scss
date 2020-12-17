@@ -1,0 +1,384 @@
+
+.ios {
+    page-buy-warrants2 {
+      .jp-card.jp-card-identified {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5) !important;
+      }
+  
+      /* Label */
+  
+      .my-cc {
+        margin: 0;
+      }
+  
+      /* Card */
+  
+      .my-cc .item {
+        width: 100%;
+        border: 1px solid #ddd;
+        padding: 0px 20px;
+        background: #f8f8f8;
+        -webkit-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
+        position: relative;
+        overflow: hidden;
+      }
+  
+      .my-cc .item-black {
+        background: #000;
+        color: #fff;
+      }
+  
+      .my-cc .item-image {
+        background-position: center center;
+        background-size: cover;
+      }
+  
+      /* Transparent Image */
+  
+      .my-cc .item img {
+        position: absolute;
+        top: -126px;
+        left: -56px;
+        transform: rotate(49deg);
+      }
+  
+      /* Heading */
+  
+      .my-cc .item .item-heading {
+        margin: 10px 0px;
+      }
+  
+      .my-cc .item .item-heading h3 {
+        float: left;
+        font-size: 16px;
+        line-height: 28px;
+        font-weight: 400;
+      }
+  
+      /* Bank Name */
+  
+      .my-cc .item .item-heading h4 {
+        float: right;
+        font-size: 16px;
+        line-height: 28px;
+        color: #aaa;
+        font-weight: 400;
+      }
+  
+      /* Account Number */
+  
+      .my-cc .item .item-account {
+        margin: 10px 0px;
+      }
+  
+      .my-cc .item .item-account span {
+        font-size: 15px;
+        line-height: 28px;
+        margin: 0px 5px;
+        letter-spacing: 3px;
+        font-family: 'OCRAStd';
+      }
+  
+      .my-cc .item .item-account span.ui-anum {
+        padding: 0px 4px;
+        background: #fff;
+      }
+  
+      .my-cc .item.item-black .item-account span.ui-anum {
+        padding: 0px 4px;
+        background: rgba(255, 255, 255, 0.45);
+      }
+  
+      /* Item */
+  
+      .my-cc .item .item-validity .item-valid {
+        margin: 5px 0px;
+      }
+  
+      /* Title */
+  
+      .my-cc .item .item-validity .item-valid h5 {
+        width: 37px;
+        font-size: 12px;
+        line-height: 18px;
+        float: left;
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 400;
+        color: #aaa;
+      }
+  
+      /* Value */
+  
+      .my-cc .item .item-validity .item-valid span {
+        float: right;
+        font-size: 15px;
+        line-height: 28px;
+        margin-right: 10px;
+        margin-top: 4px;
+        letter-spacing: 3px;
+        font-family: 'OCRAStd';
+      }
+  
+      /* Card Type */
+  
+      .my-cc .item .item-cc-type {
+        margin: 5px 0px 18px;
+      }
+  
+      /* Type */
+  
+      .my-cc .item .item-cc-type h6 {
+        float: left;
+        font-size: 13px;
+        line-height: 26px;
+        text-transform: uppercase;
+        font-weight: 400;
+        margin: 5px 0px;
+        letter-spacing: 2px;
+        font-family: 'OCRAStd';
+      }
+  
+      /* Icon */
+  
+      .my-cc .item .item-cc-type i {
+        float: right;
+        font-size: 35px;
+      }
+  
+      /* Color on Backgorund 000 */
+  
+      .my-cc .item.item-000-bg,
+      .my-cc .item.item-000-bg h3,
+      .my-cc .item.item-000-bg h4,
+      .my-cc .item.item-000-bg h5,
+      .my-cc .item.item-000-bg h6,
+      .my-cc .item.item-000-bg span {
+        color: #fff !important;
+      }
+  
+      .segment-ios .segment-button.segment-activated {
+        color: #fff;
+        background-color: #000000 !important;
+        opacity: 1;
+        -webkit-transition: 100ms all linear;
+        transition: 100ms all linear;
+      }
+  
+      .segment-ios .segment-button {
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        width: 0;
+        height: 3.2rem;
+        border-width: 1px;
+        border-style: solid;
+        border-color: #000000 !important;
+        font-size: 1.3rem;
+        line-height: 3rem;
+        color: #000;
+        background-color: transparent;
+      }
+  
+  
+    }
+  }
+  
+  .md {
+    page-buy-warrants2 {
+      .form-row > .col, .form-row > [class*="col-"] {
+        padding-right: 2px !important;
+        padding-left: 5px;
+    }
+  
+      .my-cc .item .item-account span {
+        font-size: 15px;
+        line-height: 28px;
+        margin: 0px 5px;
+        letter-spacing: 0;
+        font-family: 'OCRAStd';
+      }
+      .jp-card.jp-card-identified {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5) !important;
+      }
+  
+      /* Label */
+  
+      .my-cc {
+        margin: 0;
+      }
+  
+      /* Card */
+  
+      .my-cc .item {
+        width: 100%;
+        border: 1px solid #ddd;
+        padding: 0px 20px;
+        background: #f8f8f8;
+        -webkit-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
+        position: relative;
+        overflow: hidden;
+      }
+  
+      .my-cc .item-black {
+        background: #000;
+        color: #fff;
+      }
+  
+      .my-cc .item-image {
+        background-position: center center;
+        background-size: cover;
+      }
+  
+      /* Transparent Image */
+  
+      .my-cc .item img {
+        position: absolute;
+        top: -126px;
+        left: -56px;
+        transform: rotate(49deg);
+      }
+  
+      /* Heading */
+  
+      .my-cc .item .item-heading {
+        margin: 10px 0px;
+      }
+  
+      .my-cc .item .item-heading h3 {
+        float: left;
+        font-size: 16px;
+        line-height: 28px;
+        font-weight: 400;
+      }
+  
+      /* Bank Name */
+  
+      .my-cc .item .item-heading h4 {
+        float: right;
+        font-size: 16px;
+        line-height: 0;
+        color: #aaa;
+        font-weight: 400;
+      }
+  
+      /* Account Number */
+  
+      .my-cc .item .item-account {
+        margin: 10px 0px;
+      }
+  
+      .my-cc .item .item-account span.ui-anum {
+        padding: 0px 4px;
+        background: #fff;
+      }
+  
+      .my-cc .item.item-black .item-account span.ui-anum {
+        padding: 0px 4px;
+        background: rgba(255, 255, 255, 0.45);
+      }
+  
+      /* Item */
+  
+      .my-cc .item .item-validity .item-valid {
+        margin: 5px 0px;
+      }
+  
+      /* Title */
+  
+      .my-cc .item .item-validity .item-valid h5 {
+        width: 37px;
+        font-size: 12px;
+        line-height: 18px;
+        float: left;
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 400;
+        color: #aaa;
+      }
+  
+      /* Value */
+  
+      .my-cc .item .item-validity .item-valid span {
+        float: right;
+        font-size: 15px;
+        line-height: 28px;
+        margin-right: 10px;
+        margin-top: 4px;
+        letter-spacing: 3px;
+        font-family: 'OCRAStd';
+      }
+  
+      /* Card Type */
+  
+      .my-cc .item .item-cc-type {
+        margin: 5px 0px 18px;
+      }
+  
+      /* Type */
+  
+      .my-cc .item .item-cc-type h6 {
+        float: left;
+        font-size: 13px;
+        line-height: 26px;
+        text-transform: uppercase;
+        font-weight: 400;
+        margin: 5px 0px;
+        letter-spacing: 2px;
+        font-family: 'OCRAStd';
+      }
+  
+      /* Icon */
+  
+      .my-cc .item .item-cc-type i {
+        float: right;
+        font-size: 25px;
+      }
+  
+      /* Color on Backgorund 000 */
+  
+      .my-cc .item.item-000-bg,
+      .my-cc .item.item-000-bg h3,
+      .my-cc .item.item-000-bg h4,
+      .my-cc .item.item-000-bg h5,
+      .my-cc .item.item-000-bg h6,
+      .my-cc .item.item-000-bg span {
+        color: #fff !important;
+      }
+  
+      .segment-md .segment-button.segment-activated {
+        border-color: #000;
+        opacity: 1;
+      }
+  
+      .segment-md .segment-button {
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        width: 0;
+        height: 4.2rem;
+        border-bottom-width: 2px;
+        border-bottom-style: solid;
+        border-bottom-color: rgba(0, 0, 0, 0.1);
+        font-size: 1.2rem;
+        font-weight: 500;
+        line-height: 4rem;
+        text-transform: uppercase;
+        color: #000;
+        background-color: transparent;
+        opacity: 0.7;
+        -webkit-transition: 100ms all linear;
+        transition: 100ms all linear;
+        padding: 0 6px;
+      }
+  
+    }
+  
+  }
+  

@@ -1,0 +1,42 @@
+<ion-content padding>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-searchbar [(ngModel)]="searchTerm" (ionCancel)="onCancel($event)" [showCancelButton]="true"
+    (ionClear)="onClear($event)" (ionInput)="searchBusiness()"  class="half-margintop"></ion-searchbar>
+  <div class="dropdown-content-body dropdown-scrollable">
+    <ul class="media-list mt-3">
+      <li class="media mb-3" *ngFor="let business of businesses" (click)="goToDetails(business)">
+        <div class="position-relative mr-3  pt-3">
+          <img src="assets/imgs/icon.png" width="36" height="36" class="rounded-circle" alt="">
+        </div>
+        <div class="media-body">
+          <div class="media-title">
+            <div class="">
+              <span class="font-weight-semibold">
+                <i class="fa fa-user half-marginright"></i>{{business.user_name}}</span>
+              <span class="text-muted float-right font-size-sm">{{business.type}}</span>
+              <div style="clear: both;"></div>
+              <span class="font-weight-semibold linebreak"><i
+                  class="fa fa-info-circle  half-marginright "></i>{{business.Description}}</span>
+            </div>
+          </div>
+          <span class="text-muted"><i class="fa fa-university  half-marginright"></i>RC{{business.CACNumber}}</span>
+        </div>
+      </li>
+    </ul>
+    <div class="marginleft paddingleft marginright paddingright marginbottom margintop"
+      *ngIf="nobusiness === 'nobusiness'">
+      No Busineses
+    </div>
+    <div class="marginleft paddingleft marginright paddingright marginbottom margintop"
+      *ngIf="nobusiness1 === 'nobusiness1'">
+      List business in your member account.
+    </div>
+  </div>
+  <ion-fab top right>
+    <button ion-fab mini (click)="NewBusiness()" color="dark">
+      <i class="fa fa-plus slightly-largetext" aria-hidden="true"></i>
+    </button>
+  </ion-fab>
+</ion-content>

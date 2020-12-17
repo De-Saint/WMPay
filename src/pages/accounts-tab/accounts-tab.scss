@@ -1,0 +1,72 @@
+
+.ios {
+    page-accounts-tab {
+      super-tabs-toolbar>ion-toolbar.toolbar .tab-buttons-container .tab-buttons super-tab-button ion-icon {
+        font-size: 30px;
+      }
+    }
+  }
+  
+  .md {
+    page-accounts-tab {
+      super-tabs-toolbar>ion-toolbar.toolbar .tab-buttons-container .tab-buttons super-tab-button ion-icon {
+        font-size: 30px;
+      }
+  
+    }
+  }
+  
+  .logomenu {
+    width: 1.5em;
+    height: 1.5em;
+  }
+  
+  .toolbar-md-light .toolbar-background-md {
+    background: none !important;
+  }
+  
+  .toolbar-background-md {
+    border-color: transparent !important;
+    background: none !important;
+  }
+  
+  .toolbar-title-md {
+    /* padding: 0 12px; */
+    font-size: 2rem;
+    font-weight: 500;
+    color: #424242;
+    text-align: center !important;
+    margin-left: -1em !important;
+  }
+  
+  .newborder {
+    padding: 50px 0;
+    background: #000;
+    border-bottom-left-radius: 30%;
+    border-bottom-right-radius: 30%;
+  }
+  
+  .upperbtn {
+    position: relative;
+    z-index: 9999;
+    top: -3em;
+    margin-left: 3em !important;
+    margin-right: 3em !important;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 15px 10px -16px #111;
+  }
+  ol, ul, dl {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    margin-left: -2.5em !important;
+  }
+  .type1 {
+    width: 50px;
+    height: 50px;
+    
+  }
+  .smallborder{
+    box-shadow: 0px 15px 10px -14px #111;
+  }
+  

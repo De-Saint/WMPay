@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar>
+    <button start ion-button menuToggle icon-only color="dark">
+      <ion-icon name='menu'></ion-icon>
+    </button>
+    <ion-title>Messages</ion-title>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-fab bottom right #fab2>
+    <button ion-fab mini (click)="NewMessage()" color="dark">
+      <i class="fa fa-plus slightly-largetext" aria-hidden="true"></i>
+    </button>
+  </ion-fab>
+  <super-tabs tabsPlacement="top" [config]="{ sideMenu: 'left' }" toolbarBackground="light" toolbarColor="dark"
+    indicatorColor="dark" (tabSelect)="onTabSelect($event)">
+    <super-tab class="normatext" *ngFor="let page of pages" [root]="page.pageName" [title]="page.title" [id]="page.id">
+    </super-tab>
+  </super-tabs>
+</ion-content>

@@ -1,0 +1,31 @@
+<ion-content padding>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-searchbar [(ngModel)]="sentsearchTerm" (ionCancel)="onSentCancel($event)" [showCancelButton]="true"
+    (ionClear)="onSentClear($event)" (ionInput)="searchSentMessages()" class="half-margintop"></ion-searchbar>
+  <div class="dropdown-content-body dropdown-scrollable">
+    <ul class="media-list mt-2">
+      <li class="media mb-3" *ngFor="let sentmsg of sentmsgs" (click)="onMsgDetails(sentmsg)">
+        <div class="position-relative mr-3">
+          <img src="assets/imgs/icon.png" width="36" height="36" class="rounded-circle" alt="">
+        </div>
+
+        <div class="media-body">
+          <div class="media-title">
+            <a href="#">
+              <span class="font-weight-semibold">{{sentmsg.RecieverName}}</span>
+              <span class="text-muted float-right font-size-sm">{{sentmsg.msgdate}}</span>
+            </a>
+          </div>
+
+          <span class="text-muted">{{sentmsg.subject}}</span>
+        </div>
+      </li>
+    </ul>
+    <div class="marginleft paddingleft marginright paddingright marginbottom margintop"
+      *ngIf="nosentmsg === 'nosentmsg'">
+      No Messages
+    </div>
+  </div>
+</ion-content>

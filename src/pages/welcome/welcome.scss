@@ -1,0 +1,131 @@
+
+.md{
+  page-welcome {
+
+    .logoimg {
+      text-align:center;
+      margin-top: 2em;
+      padding: 0.4em 0.4em;
+    }
+  
+    .logoimg img {
+      width: 4em;
+      height: 4em;
+    }
+    scroll-content {
+      margin-top: 5em 0 !important;
+    }
+  
+    .slide-zoom {
+      height: 100%;
+    }
+  
+    .slide-title {
+      margin-top: 2rem;
+    }
+  
+    .slide-image {
+      max-height: 45%;
+      max-width: 95%;
+      margin: 1px 0;
+    }
+  
+    ion-slides {
+      height: 50% !important;
+      margin-right: 0 !important;
+      margin-bottom: 4.5em !important;
+    }
+  
+    b {
+      font-weight: 500;
+    }
+  
+    p {
+      padding: 0 40px;
+      font-size: 14px;
+      line-height: 1.5;
+      color: #60646B;
+  
+      b {
+        color: #000000;
+      }
+    }
+  
+   
+  
+  
+  
+  }
+}
+
+.ios{
+  page-welcome {
+
+    .logoimg {
+      text-align:center;
+      margin-top: 2em;
+      padding: 0.4em 0.4em;
+    }
+  
+    .logoimg img {
+      width: 4em;
+      height: 4em;
+    }
+    scroll-content {
+      margin-top: 5em 0 !important;
+    }
+  
+    .slide-zoom {
+      height: 100%;
+    }
+  
+    .slide-title {
+      margin-top: 2rem;
+    }
+  
+    .slide-image {
+      max-height: 55%;
+      max-width: 95%;
+      margin: 14px 0;
+    }
+  
+    ion-slides {
+      height: 50% !important;
+      margin-right: 0 !important;
+      margin-bottom: 4.5em !important;
+    }
+  
+    b {
+      font-weight: 500;
+    }
+  
+    p {
+      padding: 0 40px;
+      font-size: 14px;
+      line-height: 1.5;
+      color: #60646B;
+  
+      b {
+        color: #000000;
+      }
+    }
+  
+   
+  
+  
+  
+  }
+}
+.BtnText2 {
+  height: 43px;
+  width: 300px;
+
+  font-style: normal;
+  font-size: 1.1em;
+  line-height: 20px;
+  letter-spacing: 0.32px;
+}
+.toolbar-md {
+  padding: 5px;
+  min-height: 56px !important;
+}

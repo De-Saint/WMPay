@@ -1,0 +1,28 @@
+<ion-content padding>
+    <div class="logoimg marginbottom">
+      <img src="assets/imgs/icon.png" />
+    </div>
+    <div class="center bold mb-3"> The WealthMarket PayApp</div>
+  
+    <ion-slides autoplay="1000" loop="true" speed="2000"  slidesPerView="1.2" centeredSlides="true">
+      <ion-slide *ngFor="let slide of slides">
+        
+        <img [src]="slide.image" class="slide-image" />
+        <h3 class="slide-title" [innerHTML]="slide.title"></h3>
+        <p [innerHTML]="slide.description"></p>
+      </ion-slide>
+    </ion-slides>
+  
+    <div class="center margintop">
+      <div class="mb-3 marginbottom">
+          <button type="button" class="btn btn-dark btn-lg btn-block slightly-largetext" (click)="onLogin()">Login To Your WealthMarket Account</button>
+      </div>
+  
+      <div class="margintop">
+          <button type="button" class="btn btn-warning btn-lg btn-block slightly-largetext" (click)="onRegister()">Create Your WealthMarket Account</button>
+      </div>
+    </div>
+  
+  
+  </ion-content>
+  

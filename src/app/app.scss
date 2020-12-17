@@ -1,0 +1,138 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+.faGreen {
+  color: #28a54c;
+}
+
+.faOrange {
+  color: #ff6600;
+}
+
+.faLightBlue {
+  color: #31C0E6;
+}
+
+.faYellow {
+  color: #f2c100;
+}
+
+.faPrimary {
+  color: #069;
+}
+
+.half-marginright {
+  margin-right: 0.5em !important;
+}
+
+.double-marginright {
+  margin-right: 1em !important;
+}
+
+.half-marginleft {
+  margin-left: 0.5em !important;
+}
+
+.bar-profile {
+  padding: 2.8em 0;
+}
+
+.profile {
+  z-index: 0;
+  overflow: hidden;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+  margin-top: 2em;
+}
+
+.name {
+  color: #000;
+  margin-top: 5px !important;
+  margin-bottom: 10px !important;
+  text-align: center;
+}
+
+.profile-picture {
+  border-radius: 50%;
+  width: 4.4em;
+  height: 4.4em;
+}
+
+.menu .has-header {
+  top: 100px;
+}
+
+
+#menuitem {
+  color: #fff;
+  padding: 0.1em 3em 0.1em;
+}
+
+.list-md .item-block .item-inner {
+  border-bottom: none !important;
+}
+.item-md.item-block .item-inner {
+  padding-right: 8px;
+  border-bottom: none !important;
+}
+.list-ios>.item-block:first-child {
+  border-top: none !important;
+}
+
+ion-header {
+  left: 0;
+  top: 0;
+  z-index: 1 !important;
+  display: block;
+  width: 100%;
+}
+
+.list-ios>.item-block:last-child,
+.list-ios>.item-wrapper:last-child .item-block {
+  border-bottom: none !important;
+}
+
+.header-ios .toolbar-background-ios,
+.footer-ios .toolbar-background-ios {
+  border-style: none !important;
+  border-color: rgba(0, 0, 0, 0.3);
+}
+
+
+.toolbar-background-ios {
+  background: #fff !important;
+}
+
+
+.content-ios.outer-content {
+  background: #fff !important;
+}
+.content-md.outer-content {
+  background: #fff !important;
+}
+.item-ios[detail-push] .item-inner, button.item-ios:not([detail-none]) .item-inner, a.item-ios:not([detail-none]) .item-inner {
+  background-image: none !important;
+  padding-right: 32px;
+  background-position: right 14px center;
+  background-position: right calc(14px + constant(safe-area-inset-right)) center;
+  background-position: right calc(14px + env(safe-area-inset-right)) center;
+  background-repeat: no-repeat;
+  background-size: 14px 14px;
+}
+
+

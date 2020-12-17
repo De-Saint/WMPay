@@ -1,0 +1,106 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Register</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="splash-bg2 neg-margintop"></div>
+  <div class="splash-info">
+    <div class="splash-logo left round">
+      <img src="assets/imgs/icon.png" />
+    </div>
+  </div>
+  <div style="clear:both;"></div>
+  <form [formGroup]="MembForm" class="half-margintop">
+    <div class="form-group input-group-lg mt-3">
+      <label for="Name">First Name</label>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="fa fa-user-circle slightly-largetext"></i></span>
+        </div>
+        <input type="text" formControlName="firstName" name="firstName"
+          class="form-control form-control-lg slightly-largetext" placeholder="Enter your First Name">
+      </div>
+    </div>
+
+    <div class="form-group input-group-lg mt-3">
+      <label for="Name">Last Name</label>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="fa fa-user-circle slightly-largetext"></i></span>
+        </div>
+        <input type="text" formControlName="lastName" name="lastName"
+          class="form-control form-control-lg slightly-largetext" placeholder="Enter your Last Name">
+      </div>
+    </div>
+
+    <div class="form-group input-group-lg mt-3">
+      <label for="Email">Email</label>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="fa fa-envelope slightly-largetext"></i></span>
+        </div>
+        <input type="email" formControlName="email" name="email" (ngModelChange)="onCheckEmail($event)"
+          class="form-control form-control-lg slightly-largetext" placeholder="Enter your Email">
+      </div>
+    </div>
+
+    <div class="form-group input-group-lg mt-3">
+      <label for="Phone">Phone</label>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="fa fa-phone slightly-largetext"></i></span>
+        </div>
+        <input type="tel" formControlName="phone" name="phone" class="form-control form-control-lg slightly-largetext"
+          placeholder="Enter your Phone">
+      </div>
+    </div>
+
+    <div class="form-group input-group-lg mt-3">
+      <label for="header">Gender</label>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="fa fa-male slightly-largetext"></i></span>
+        </div>
+        <select formControlName="gender" name="gender"
+          class="form-control form-control-lg custom-select slightly-largetext" required>
+          <option value="" disabled selected="selected">Select your Gender</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group input-group-lg mt-3">
+      <label for="DOB">Date of Birth</label>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="fa fa-calendar slightly-largetext"></i></span>
+        </div>
+        <input type="date" formControlName="dob" name="dob" id="datepicker"
+          class="form-control form-control-lg slightly-largetext datepicker" displayFormat="YYYY-MM-DD"
+          value="2017-01-01" placeholder="Enter your Date Of Birth">
+      </div>
+    </div>
+
+    <div class="form-group input-group-lg mt-3">
+      <label for="Password">Password</label>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="fa fa-key slightly-largetext"></i></span>
+        </div>
+        <input #x type="password" formControlName="password" name="password" name="password"
+          class="form-control form-control-lg slightly-largetext" placeholder="Enter your Password">
+        <div class="input-group-append" (click)="x.type=x.type=='password'?'text':'password'">
+          <span class="input-group-text"><i class="fa fa-eye slightly-largetext"></i></span>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="text-center">
+      <button class="btn btn-dark btn-block btn-lg slightly-largetext" (click)="onSaveMember()" type="submit">Create
+        Your Account</button>
+    </div>
+  </form>
+</ion-content>

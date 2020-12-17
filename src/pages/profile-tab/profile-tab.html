@@ -1,0 +1,148 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name='menu'></ion-icon>
+    </button>
+    <ion-title>Profile</ion-title>
+    <button end ion-button menuToggle icon-only color="dark">
+      <ion-icon name='info'></ion-icon>
+    </button>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="splash-bg2"></div>
+  <div class="splash-info">
+    <div class="splash-logo left round">
+      <img src="assets/imgs/icon.png" />
+    </div>
+    <div class="splash-intro right">
+      <button ion-button icon-left round small outline color="dark" (click)="EditProfile()">
+        Edit Profile
+      </button>
+    </div>
+  </div>
+  <div style="clear:both;"></div>
+  <div class="padding-horizontal" *ngIf="details?.usertype === 'Member' || details?.usertype === 'Admin'">
+    <div class="largetext">{{details?.user_name}}</div>
+    <div class="greytext left">{{details?.usertype}}
+    </div>
+    <div style="clear: both;"></div>
+    <div class="row slightly_largetext">
+      <div class="col ">
+        <div class="mediumtext">
+          Email
+        </div>
+        <strong>{{details?.email}} </strong>
+      </div>
+      <div class="col text-right">
+        <div class="mediumtext">
+          Transaction PIN
+        </div>
+        <div class="input-group">
+          <input #x type="password" [(ngModel)]="pin" name="pin"
+            class="form-control form-control-sm mediumtext text-right bold  " placeholder="">
+          <div class="input-group-append" (click)="x.type=x.type=='password'?'text':'password'">
+            <span class="input-group-text"><i class="fa fa-eye slightly-largetext"></i></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row slightly_largetext">
+      <div class="col ">
+        <div class="mediumtext">
+          Phone Number
+        </div>
+        <strong>{{details?.phone_number}} </strong>
+      </div>
+      <div class="col text-right">
+        <div class="mediumtext">
+          Date Joined
+        </div>
+        <strong>{{details?.date_joined}} </strong>
+      </div>
+    </div>
+    <div style="clear:both;">
+    </div>
+  </div>
+
+
+  <div class="padding-horizontal" *ngIf="details?.usertype === 'Business'">
+    <div class="largetext">{{details?.user_name}}</div>
+    <div class="greytext left">{{details?.usertype}}
+    </div>
+    <div class="right textright double-neg-margintop">
+      <button ion-button icon-left round small outline color="primary" (click)="SwitchAccount()">
+        Switch To My Account
+      </button>
+    </div>
+    <div style="clear: both;"></div>
+    <div class="row slightly_largetext">
+      <div class="col ">
+        <div class="mediumtext">
+          Business Industry
+        </div>
+        <strong>{{details?.BusinessIndustry}} </strong>
+      </div>
+      <div class="col text-right">
+        <div class="mediumtext">
+          Transaction PIN
+        </div>
+        <div class="input-group">
+          <input #x type="password" [(ngModel)]="pin" name="pin"
+            class="form-control form-control-sm mediumtext text-right bold  " placeholder="">
+          <div class="input-group-append" (click)="x.type=x.type=='password'?'text':'password'">
+            <span class="input-group-text"><i class="fa fa-eye slightly-largetext"></i></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row slightly_largetext">
+      <div class="col">
+        <div class="mediumtext">
+          Business Type
+        </div>
+        <strong>{{details?.BusinessType}} </strong>
+      </div>
+      <div class="col text-right">
+        <div class="mediumtext">
+          Date Joined
+        </div>
+        <strong>{{details?.date_joined}} </strong>
+      </div>
+    </div>
+
+    <div class="row slightly_largetext">
+      <div class="col ">
+        <div class="mediumtext">
+          Email
+        </div>
+        <strong>{{details?.email}} </strong>
+      </div>
+      <div class="col text-right">
+        <div class="mediumtext">
+          Phone Number
+        </div>
+        <strong>{{details?.phone_number}} </strong>
+      </div>
+    </div>
+    <div style="clear:both;"></div>
+  </div>
+
+
+
+  <super-tabs *ngIf="usertype === 'Business'" tabsPlacement="top" [config]="{ sideMenu: 'left' }"
+    toolbarBackground="light" toolbarColor="dark" indicatorColor="dark" (tabSelect)="onTabSelect($event)">
+    <super-tab class="normatext" *ngFor="let page of businessPages" [root]="page.pageName" [title]="page.title"
+      [id]="page.id">
+    </super-tab>
+  </super-tabs>
+  <super-tabs *ngIf="usertype === 'Member' || usertype === 'Admin'" tabsPlacement="top" [config]="{ sideMenu: 'left' }"
+    toolbarBackground="light" toolbarColor="dark" indicatorColor="dark" (tabSelect)="onTabSelect($event)">
+    <super-tab class="normatext" *ngFor="let page of memberPages" [root]="page.pageName" [title]="page.title"
+      [id]="page.id">
+    </super-tab>
+  </super-tabs>
+</ion-content>

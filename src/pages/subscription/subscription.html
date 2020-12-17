@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Validation Fees</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="">
+    <div class="card-wrapper"></div>
+    <div class="form-container">
+      <form [formGroup]="payForm" class="half-margintop">
+        <div class="form-group input-group-lg mt-3">
+          <label for="Name">Name</label>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fa fa-user-circle slightly-largetext"></i></span>
+            </div>
+            <input type="text" formControlName="fullname" name="fullname" readonly [(ngModel)]="fullname"
+              class="form-control form-control-lg slightly-largetext">
+          </div>
+        </div>
+        <div class="form-group input-group-lg mt-3">
+          <label for="Email">Email</label>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fa fa-envelope slightly-largetext"></i></span>
+            </div>
+            <input type="email" formControlName="email" name="email" readonly [(ngModel)]="email"
+              class="form-control form-control-lg slightly-largetext">
+          </div>
+        </div>
+        <div class="form-group input-group-lg mt-3">
+          <label for="header">Amount</label>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fa fa-sort-numeric-asc slightly-largetext"></i></span>
+            </div>
+            <input formControlName="amount" maxlength="7" readonly [(ngModel)]="amount" name="amount" required
+              class="form-control form-control-lg slightly-largetext">
+            <div class="input-group-append">
+              <span class="input-group-text slightly-largetext">00</span>
+            </div>
+
+          </div>
+
+        </div>
+        <div class="text-center mt-3">
+          <button angular4-paystack [key]="public_key" (paymentInit)="paymentInit()" [email]="email" [amount]="amountToPay * 100" [ref]="random_id"
+            [channels]="channels" (close)="paymentCancel()" (callback)="paymentDone($event)" (click)="onPay()"
+            [metadata]="{ custom_fields: [{display_name: 'Customer Name', variable_name: 'Customer Name', value: fullname},
+            {display_name: 'Payment Type', variable_name: 'Payment Type', value: 'Buy Warrants With Cash' }] }"
+             class="btn btn-dark btn-lg btn-block slightly-largetext mb-3">
+            Buy Warrants (With PayStack)
+          </button>
+        </div>
+        <div class="card-header text-center text-dark bold">{{loadmsg}}</div>
+         
+      </form>
+    </div>
+  </div>
+</ion-content>

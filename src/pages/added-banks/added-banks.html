@@ -1,0 +1,82 @@
+<ion-content padding>
+  <div class="dropdown-content-body dropdown-scrollable">
+    <ul class="media-list mt-2"  *ngIf="error !== 'nobanks'">
+      <li class="media mb-3" >
+        <div class="position-relative mr-3">
+          <img src="assets/imgs/icon.png" width="36" height="36" class="rounded-circle" alt="">
+        </div>
+
+        <div class="media-body">
+          <div class="media-title">
+            <a href="#">
+              <span class="font-weight-semibold">{{bkresult?.BankName}}</span>
+              <span class="text-muted float-right font-size-sm">
+                <i class="fa fa-trash slightly-largetext mr-3 text-danger" (click)="DeleteBank(bkresult?.id)"></i> 
+                <i class="fa fa-pencil ml-3 slightly-largetext text-success" (click)="EditBank()"></i>
+              </span>
+            </a>
+            <div style="clear: both;"></div>
+          </div>
+          <div class="bold mt-2 float-left">Account Number</div><div class="bold mt-2 float-right">Account Type</div>
+          <div style="clear: both;"></div>
+          <span class="text-muted mr-3">{{bkresult?.accountNumber}}</span> <span class="text-muted mr-3 float-right">{{bkresult?.accountType}}</span> 
+          <div style="clear: both;"></div>
+          <div class="bold mt-2">BVNumber</div>
+          <span class="text-muted">{{bkresult?.bvnNumber ? bkresult?.bvnNumber : '' }}</span>
+        </div>
+      </li>
+    </ul>
+    <div class="marginleft paddingleft marginright paddingright marginbottom margintop"
+   *ngIf="error === 'nobanks'">
+      You have not added any bank account!
+    </div>
+  </div>
+
+
+  <form [formGroup]="addBankForm" class="half-margintop hide" id="addbnkform">
+    <hr class="bold">
+    <div class="form-group input-group-lg mt-3" *ngFor="let bank of banks">
+      <label for="header">Bank Name</label>
+      <select formControlName="bankNameID" name="bankNameID" class="form-control form-control-lg custom-select slightly-largetext"
+        (onChange)="($event)">
+        <option value="" disabled selected="selected">Select Bank Name</option>
+        <option *ngFor="let bk of bank" value="{{ bk.id }}">{{ bk.name}}</option>
+      </select>
+    </div>
+    <div class="form-group input-group-lg mt-3">
+      <label for="header">Account Type</label>
+      <select formControlName="bankAcctType" name="bankAcctType" class="form-control form-control-lg custom-select slightly-largetext">
+        <option value="" disabled selected="selected">Select Account Type</option>
+        <option value="Savings">Savings</option>
+        <option value="Current">Current</option>
+        <option value="Fixed Deposit">Fixed Deposit</option>
+      </select>
+    </div>
+    <div class="form-group input-group-lg mt-3">
+      <label for="Name">Account Number</label>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="fa fa-user-circle slightly-largetext"></i></span>
+        </div>
+        <input type="text" formControlName="bankAcctNumber" name="bankAcctNumber" class="form-control form-control-lg slightly-largetext"
+          placeholder="Enter your Account Number">
+      </div>
+    </div>
+    <div class="form-group input-group-lg mt-3">
+      <label for="BVNNumber">BVN Number <small><b>(Optional)</b></small></label>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="fa fa-envelope slightly-largetext"></i></span>
+        </div>
+        <input type="text" formControlName="bankAcctBVN" name="bankAcctBVN" 
+          class="form-control form-control-lg slightly-largetext" placeholder="Enter your BVN Number">
+      </div>
+    </div>
+
+    <div class="text-center">
+      <button class="btn btn-dark btn-block btn-lg slightly-largetext" (click)="onSave()" type="submit">Update Bank Account</button>
+    </div>
+
+  </form>
+
+</ion-content>

@@ -1,0 +1,197 @@
+<ion-header>
+  <ion-navbar>
+    <button start ion-button menuToggle icon-only color="dark">
+      <ion-icon name='menu'></ion-icon>
+    </button>
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="row toprow">
+    <div class="col">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title font-weight-bold">Buy Market<br />Warrants</h5>
+          <div class="card-text mediumtext mb-3">Buy Warrants with Cash into your Account to
+            spend on The WealthMarket.</div>
+
+        </div>
+        <div class="card-footer text-center bg-white border-top-0">
+          <button type="button" class="btn btn-outline-dark" (click)="onBuyWarrants()"><i
+              class="fa fa-arrow-circle-o-right fa-fw fa-2x"></i></button>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card border-0 bg-primary text-white  h-100">
+        <div class="card-body">
+          <h5 class="card-title">Quick <br />Transfer</h5>
+          <div class="card-text mediumtext mb-3">Send fund to family, friends and customers.</div>
+        </div>
+        <div class="card-footer text-center border-top-0 bg-primary">
+          <button type="button" class="btn btn-outline-light" (click)="onQuickTransfer()"><i
+              class="fa fa-arrow-circle-o-right fa-fw fa-2x"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="row toprow">
+    <div class="col">
+      <div class="card text-center bg-success text-white" (click)="onShowAccounts()">
+        <div class="card-body">
+          <h5 class="card-title"><i class="fa fa-credit-card fa-fw fa-2x"></i></h5>
+          <div class="card-title font-weight-bold mt-1 pt-1">View Account Balances / Transaction Details</div>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="col">
+      <div class="card border-0 bg-secondary text-white">
+        <div class="card-body">
+          <h5 class="card-title">Credit <br />Account</h5>
+          <div class="card-text mediumtext mb-3">Transfer some credit from your Online Account into
+            your Offline Account for offline transactions.</div>
+        </div>
+        <div class="card-footer text-center border-top-0 bg-secondary">
+          <button type="button" class="btn btn-outline-light" (click)="onFundOffline()"><i class="fa fa-arrow-circle-o-right fa-fw fa-2x"></i></button>
+        </div>
+      </div>
+    </div> -->
+  </div>
+
+  <div class="row toprow">
+    <div class="col">
+      <div class="card h-100 border-0 bg-danger text-white">
+        <div class="card-body">
+          <h5 class="card-title font-weight-bold">CashOut<br />Market Warrants</h5>
+          <div class="card-text mediumtext mb-3 ">Collect the Cash equivalent of your Market Warrants by cashing out at
+            Par.
+          </div>
+        </div>
+        <div class="card-footer text-center bg-danger border-top-0">
+          <button type="button" class="btn btn-outline-light" (click)="onCashOut()"><i
+              class="fa fa-arrow-circle-o-right fa-fw fa-2x"></i></button>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title font-weight-bold">Add Your<br />Bank Account</h5>
+          <div class="card-text mediumtext">Add your personal bank account to receive your cash equivalent of your
+            Market Warrants. </div>
+        </div>
+        <div class="card-footer text-center border-top-0 bg-light">
+          <button type="button" class="btn btn-outline-dark" (click)="onAddBank()"><i
+              class="fa fa-arrow-circle-o-right fa-fw fa-2x"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row toprow">
+    <div class="col">
+      <div class="card text-center bg-dark text-white" (click)="onShowMessages()">
+        <div class="card-body">
+          <h5 class="card-title"><i class="fa fa-bell-o fa-fw fa-2x"></i></h5>
+          <div class="card-title font-weight-bold mt-1 pt-1">View Message / Notification Details</div>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="col">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title font-weight-bold">QR-Code<br />Offline</h5>
+          <div class="card-text mediumtext">Make Payment via QR-Code - Offline. An alternative to Offline Payment. </div>
+        </div>
+        <div class="card-footer text-center border-top-0 bg-light">
+          <button type="button" class="btn btn-outline-dark" (click)="onPayDouble()"><i class="fa fa-arrow-circle-o-right fa-fw fa-2x"></i></button>
+        </div>
+      </div>
+    </div> -->
+  </div>
+
+
+  <div class="row toprow">
+    <div class="col">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title font-weight-bold">SMS<br />Payment</h5>
+          <div class="card-text mediumtext">Make payment via SMS. An alternative to Quick Transfer using SMS. </div>
+        </div>
+        <div class="card-footer text-center border-top-0 bg-light">
+          <button type="button" class="btn btn-outline-dark" (click)="onSMSPay()"><i
+              class="fa fa-arrow-circle-o-right fa-fw fa-2x"></i></button>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100 border-0 bg-warning text-white">
+        <div class="card-body">
+          <h5 class="card-title font-weight-bold">QR-Code<br />Online</h5>
+          <div class="card-text mediumtext mb-3 ">Make Payment via QR-Code - Online. An alternative to Quick Transfer.
+          </div>
+        </div>
+        <div class="card-footer text-center bg-warning border-top-0">
+          <button type="button" class="btn btn-outline-light" (click)="onPaySingle()"><i
+              class="fa fa-arrow-circle-o-right fa-fw fa-2x"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row toprow">
+    <div class="col">
+      <div class="card border-0 bg-secondary text-center text-white" (click)="onNewBusiness()">
+        <div class="card-body">
+          <h5 class="card-title"><i class="fa fa-plus-circle fa-fw fa-2x"></i></h5>
+          <div class="card-title font-weight-bold  mt-3 pt-3">Add or List your Business on The WealthMarket.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row toprow">
+    <div class="col">
+      <div class="card border-0 bg-primary text-white  h-100">
+        <div class="card-body">
+          <h5 class="card-title font-weight-bold">Send New <br />Message</h5>
+          <div class="card-text mediumtext mb-3">Send new message to, or reply to message from people on your list
+            within the WealthMarket.</div>
+        </div>
+        <div class="card-footer text-center border-top-0 bg-primary">
+          <button type="button" class="btn btn-outline-light" (click)="onSendMessage()"><i
+              class="fa fa-arrow-circle-o-right fa-fw fa-2x"></i></button>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title font-weight-bold">Add New <br />Contact</h5>
+          <div class="card-text mediumtext mb-3">Add your family, customers and friends to your Contact List.</div>
+        </div>
+        <div class="card-footer text-center bg-white border-top-0">
+          <button type="button" class="btn btn-outline-dark" (click)="onNewContact()"><i
+              class="fa fa-arrow-circle-o-right fa-fw fa-2x"></i></button>
+        </div>
+      </div>
+      
+      <!-- <div class="col" *ngIf="usertype === 'Business' || type === 'Business'">
+      <div class="card text-center bg-secondary text-white" (click)="onAddStaff()">
+        <div class="card-body">
+          <h5 class="card-title"><i class="fa fa-plus-circle fa-fw fa-2x"></i></h5>
+          <div class="card-title font-weight-bold mt-1 pt-1">Add The WealthMarket Users to your Staff List.</div>
+        </div>
+      </div>
+    </div> -->
+    </div>
+  </div>
+
+
+</ion-content>

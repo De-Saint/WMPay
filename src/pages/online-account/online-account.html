@@ -1,0 +1,78 @@
+<ion-header>
+  <ion-navbar>
+    <button start ion-button menuToggle icon-only color="dark">
+      <ion-icon name='menu'></ion-icon>
+    </button>
+    <ion-title> <span class="">Online Transactions</span></ion-title>
+
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <div class="splash-bg2"></div>
+  <div class="splash-info">
+    <div class="splash-logo left round">
+      <img src="assets/imgs/icon.png" />
+    </div>
+    <div style="clear:both;"></div>
+  </div>
+  <div class="padding-horizontal">
+    <div class="left half-margintop">
+      <div class="slightly-largetext">{{account?.AccountDefinitionName}}</div>
+      <div class="greytext left">Account Number:
+        <span class="bold">{{account?.AccountNumber}}</span>
+      </div>
+    </div>
+    <div class="right">
+      <button ion-button icon-left small outline color="dark">
+        {{account?.Available_Balance  | currency: 'NGN': '1.2-2'}}
+      </button>
+    </div>
+
+    <div style="clear:both;"></div>
+    <div class="row slightly-largetext">
+      <div class="col ">
+        <div class="mediumtext">
+          Direct Balance
+        </div>
+        <strong>{{account?.Available_Balance   | currency: 'NGN': '1.2-2'}} </strong>
+      </div>
+
+      <div class="col text-right">
+        <div class="mediumtext ">
+          Escrow Balance
+        </div>
+        <strong>{{account?.Escrow_Balance   | currency: 'NGN': '1.2-2'}} </strong>
+      </div>
+    </div>
+
+    <div class="row slightly-largetext">
+      <div class="col ">
+        <div class="mediumtext">
+          Blocked Balance
+        </div>
+        <strong>{{account?.Blocked_Balance  | currency: 'NGN': '1.2-2'}} </strong>
+      </div>
+
+      <div class="col text-right" *ngIf="account?.AccountDefinitionName === 'Warrants'">
+        <div class="mediumtext">
+          Offline Balance
+        </div>
+        <strong>{{account?.Offline_Balance   | currency: 'NGN': '1.2-2'}} </strong>
+      </div>
+    </div>
+    <div style="clear:both;">
+    </div>
+
+  </div>
+
+<super-tabs tabsPlacement="top" 
+[config]="{ sideMenu: 'left' }" 
+toolbarBackground="light" 
+toolbarColor="dark"
+indicatorColor="dark" 
+(tabSelect)="onTabSelect($event)">
+  <super-tab class="normatext capitalize" *ngFor="let page of pages" [rootParams]="navParams.data"
+    [root]="page.pageName" [title]="page.title" [id]="page.id">
+  </super-tab>
+</super-tabs>
+</ion-content>

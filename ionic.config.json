@@ -1,0 +1,7 @@
+{
+  "name": "WMPay",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

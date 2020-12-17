@@ -1,0 +1,139 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Edit Profile</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="splash-bg2"></div>
+  <div class="splash-info">
+    <div class="splash-logo left round">
+      <img src="assets/imgs/icon.png" />
+    </div>
+    <div class="splash-intro right">
+      <button
+        ion-button
+        icon-left
+        round
+        small
+        outline
+        color="dark"
+        (click)="ChangeUserPin()"
+      >
+        Change User PIN
+      </button>
+    </div>
+  </div>
+  <div style="clear:both;"></div>
+  <div
+    class="padding-horizontal"
+    *ngIf="details?.usertype === 'Member' || details?.usertype === 'Admin'"
+  >
+    <div class="largetext">{{details?.user_name}}</div>
+    <div class="greytext left">{{details?.usertype}}</div>
+    <div style="clear: both;"></div>
+  </div>
+
+  <div class="padding-horizontal" *ngIf="details?.usertype === 'Business'">
+    <div class="largetext">@{{details?.user_name}}</div>
+    <div class="greytext">{{details?.usertype}}</div>
+    <div style="clear: both;"></div>
+  </div>
+
+  <div class="padding-horizontal">
+    <div class="card mt-3">
+      <div class="card card-header text-left">
+        Edit Profile.
+      </div>
+      <div class="card-body">
+        <div class="editForm">
+          <form #editForm="ngForm">
+            <div class="mb-2">
+              <label for="FirstName">FirstName</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroupPrepend">
+                    <i class="fa fa-envelope slightly-largetext"></i
+                  ></span>
+                </div>
+                <input
+                  type="text"
+                  [(ngModel)]="edit.firstname"
+                  name="firstname"
+                  required
+                  class="form-control form-control-lg slightly-largetext"
+                  placeholder="Enter FirstName"
+                />
+              </div>
+            </div>
+            <div class="mb-2">
+              <label for="LastName">LastName</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroupPrepend">
+                    <i class="fa fa-envelope slightly-largetext"></i
+                  ></span>
+                </div>
+                <input
+                  type="text"
+                  [(ngModel)]="edit.lastname"
+                  name="lastname"
+                  required
+                  class="form-control form-control-lg slightly-largetext"
+                  placeholder="Enter your LastName"
+                />
+              </div>
+            </div>
+
+            <div class="">
+              <label for="Password">Password</label>
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"
+                    ><i class="fa fa-key slightly-largetext"></i
+                  ></span>
+                </div>
+                <input
+                  #x
+                  type="password"
+                  [(ngModel)]="edit.password"
+                  name="password"
+                  class="form-control form-control-lg slightly-largetext"
+                  placeholder="Enter your password"
+                />
+                <div
+                  class="input-group-append"
+                  (click)="x.type=x.type=='password'?'text':'password'"
+                >
+                  <span class="input-group-text"
+                    ><i class="fa fa-eye slightly-largetext"></i
+                  ></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="text-center double-marginbottom">
+              <div class="marginbottom">
+                <button
+                  type="submit"
+                  class="btn btn-dark btn-lg btn-block slightly-largetext"
+                  (click)="onEditProfile(editForm)"
+                >
+                  <i
+                    class="fa fa-sign-in slightly-largetext half-marginright"
+                  ></i>
+                  Submit
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <p class="card-text bold text-center">
+          Please, go to the website (www.thewealthmarket.com) and make a request
+          for any change(s).
+        </p>
+      </div>
+    </div>
+   
+  </div>
+</ion-content>

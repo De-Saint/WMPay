@@ -1,0 +1,101 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>User Pin</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="splash-bg2 neg-margintop"></div>
+  <div class="splash-info">
+    <div class="splash-logo left round">
+      <img src="assets/imgs/icon.png" />
+    </div>
+    <div class="splash-intro right">
+      <div class="normaltext" ion-text color="dark" (click)="ResetPin()">Forgot Application Pin?</div>
+    </div>
+  </div>
+  <div style="clear:both;"></div>
+
+  <div class="loginForm double-marginbottom double-margintop">
+    <form #CheckForm="ngForm">
+      <div class="double-margintop text-center double-marginbottom">
+        <label for="Pin"><i class="fa fa-keyboard-o mr-2 slightly-largetext"></i><span
+            class="font-weight-normal slightly-largetext">Enter Application Pin</span></label>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fa fa-key slightly-largetext"></i></span>
+          </div>
+          <input #x type="password" id="code" [(ngModel)]="login.pin" name="pin" readonly placeholder="Application Pin"
+            class="form-control form-control-lg slightly-largetext text-center">
+          <div class="input-group-append" (click)="x.type=x.type=='password'?'text':'password'">
+            <span class="input-group-text"><i class="fa fa-eye slightly-largetext"></i></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="flex-row d-flex justify-content-around mt-3 mb-3">
+          <button type="button" class="btn btn-outline-dark btn-lg ml-3 mr-3 mb-3 rounded-circle"
+            style="width: 5em; height: 5em" (click)="Btn1()">
+            <span class="font-weight-bold slightly-largetext">1</span>
+          </button>
+          <button type="button" class="btn btn-outline-dark  btn-lg ml-3 mr-3 mb-3 rounded-circle"
+            style="width: 5em; height: 5em" (click)="Btn2()">
+            <span class="font-weight-bold slightly-largetext">2</span>
+          </button>
+          <button type="button" class="btn btn-outline-dark  btn-lg ml-3 mr-3 mb-3 rounded-circle"
+            style="width: 5em; height: 5em" (click)="Btn3()">
+            <span class="font-weight-bold slightly-largetext">3</span></button>
+        </div>
+
+        <div class="flex-row d-flex justify-content-around mt-3 mb-3">
+          <button type="button" class="btn btn-outline-dark ml-3 btn-lg mr-3 mb-3 rounded-circle"
+            style="width: 5em; height: 5em" (click)="Btn4()">
+            <span class="font-weight-bold slightly-largetext">4</span>
+          </button>
+          <button type="button" class="btn btn-outline-dark ml-3 btn-lg mr-3 mb-3 rounded-circle"
+            style="width: 5em; height: 5em" (click)="Btn5()">
+            <span class="font-weight-bold slightly-largetext">5</span>
+          </button>
+          <button type="button" class="btn btn-outline-dark ml-3 btn-lg mr-3 mb-3 rounded-circle"
+            style="width: 5em; height: 5em" (click)="Btn6()">
+            <span class="font-weight-bold slightly-largetext">6</span>
+          </button>
+        </div>
+
+        <div class="flex-row d-flex justify-content-around mt-3 mb-3">
+          <button type="button" class="btn btn-outline-dark ml-3 btn-lg mr-3 mb-3 rounded-circle"
+            style="width: 5em; height: 5em" (click)="Btn7()">
+            <span class="font-weight-bold slightly-largetext">7</span>
+          </button>
+          <button type="button" class="btn btn-outline-dark ml-3 btn-lg mr-3 mb-3 rounded-circle"
+            style="width: 5em; height: 5em" (click)="Btn8()">
+            <span class="font-weight-bold slightly-largetext">8</span>
+          </button>
+          <button type="button" class="btn btn-outline-dark ml-3 btn-lg mr-3 mb-3 rounded-circle"
+            style="width: 5em; height: 5em" (click)="Btn9()">
+            <span class="font-weight-bold slightly-largetext">9</span>
+          </button>
+        </div>
+
+
+        <div class="flex-row d-flex justify-content-around mt-3 mb-3">
+          <button type="button" class="btn btn-danger ml-3 btn-lg mr-3 mb-3 rounded-circle"
+            style="width: 5em; height: 5em" (click)="BtnLess()">
+            <span class="font-weight-bold slightly-largetext">C</span>
+          </button>
+          <button type="button" class="btn btn-outline-dark ml-3 btn-lg mr-3 mb-3 rounded-circle"
+            style="width: 5em; height: 5em" (click)="Btn0()">
+            <span class="font-weight-bold slightly-largetext">0</span>
+          </button>
+          <button type="button" class="btn btn-success ml-3 mr-3 btn-lg mb-3 rounded-circle"
+            style="width: 5em; height: 5em" (click)="onUserPin(CheckForm)"><span
+              class="font-weight-bold slightly-largetext">Go
+            </span>
+          </button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</ion-content>

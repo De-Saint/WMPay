@@ -1,0 +1,26 @@
+page-businesses {
+    ol, ul, dl {
+        margin-top: 0;
+        margin-bottom: 1rem;
+        margin-left: -2.5em !important;
+    }
+    .searchbar-md {
+        background: inherit;
+        padding: 0px !important; 
+    }
+    ion-fab[top] {
+        top: -0.6em;
+    }
+}
+.linebreak {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    line-height: 16px;
+    /* fallback */
+    max-height: 32px;
+    /* fallback */
+    -webkit-line-clamp: 2;
+    /* number of lines to show */
+    -webkit-box-orient: vertical;
+  }

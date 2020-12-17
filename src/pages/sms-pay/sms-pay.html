@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>SMS Pay</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only color="secondary" (click)="onSMSCheckBalance()">
+        <ion-icon name="checkmark-circle-outline" class="bold"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form class="" [formGroup]="smsForm">
+    <div class="double-margintop">
+      <label for="header">Beneficiary's Phone Number</label>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="fa fa-phone slightly-largetext"></i></span>
+        </div>
+        <input class="form-control form-control-lg slightly-largetext" type="text" formControlName="phone" name="phone"
+          name="phone" required placeholder="Enter the Reciepient Phone Number">
+        <div class="input-group-append" (click)="onGetPhoneContact()">
+          <span class="input-group-text"><i class="fa fa-search doubletext"></i></span>
+        </div>
+        <small>Please, ensure the phone number is registered with The WealthMarket</small>
+      </div>
+    </div>
+
+    <div class="form-group input-group-lg mt-3">
+      <label for="header">Amount</label>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="fa fa-sort-numeric-asc slightly-largetext"></i></span>
+        </div>
+        <input formControlName="amount" maxlength="7" name="amount" #myBudget required
+          placeholder="Enter the Transaction Amount" class="form-control form-control-lg slightly-largetext"
+          (input)="myBudget.value = format(smsForm.value.amount)">
+        <div class="input-group-append">
+          <span class="input-group-text slightly-largetext">00</span>
+        </div>
+
+      </div>
+      <div class=" mb-3 mt-3">
+        <div class="left">Minimum Amount</div>
+        <div class="right">NGN 10.00</div>
+        <div style="clear:both;"></div>
+      </div>
+      <div class="mt-3 mt-3">
+        <div class="left">Maximum Amount</div>
+        <div class="right">NGN 999,000.00</div>
+        <div style="clear:both;"></div>
+      </div>
+    </div>
+    <div class="form-group input-group-lg mt-3">
+      <label for="header">Transaction PIN</label>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="fa fa-key slightly-largetext"></i></span>
+        </div>
+        <input #x type="password" class="form-control form-control-lg slightly-largetext" formControlName="pin"
+          name="pin" required placeholder="Enter the Transaction PIN">
+        <div class="input-group-append" (click)="x.type=x.type=='password'?'text':'password'">
+          <span class="input-group-text"><i class="fa fa-eye slightly-largetext"></i></span>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="form-group mt-3">
+      <label for="body">Narration/Comment</label>
+      <textarea class="form-control slightly-largetext" rows="2" placeholder="Narration" formControlName="narration"
+        name="narration"></textarea>
+    </div>
+    <div class="text-center">
+      <button type="button" class="btn btn-dark btn-block btn-lg slightly-largetext" (click)="onSMSTransfer(smsForm)"
+        type="submit">Pay Via SMS</button>
+    </div>
+  </form>
+
+</ion-content>

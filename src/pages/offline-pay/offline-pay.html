@@ -1,0 +1,97 @@
+<ion-content class="bgimage" no-bounce>
+  <div class="card card-header text-center">
+    Offline Pay In-Progress
+  </div>
+  <div class="hide">
+    <ion-card class="">
+    <ion-card-content>
+      <div id="instructionsInfo" class="center show">
+        <div class="double-margintop center marginbottom">
+          <div class="mediumtext margintop">
+            The Seller will create the Wi-Fi or Hotspot connection for the Buyer to connect to before using this App.
+          </div>
+          <div class="mediumtext margintop">
+            Ensure you use a different or new password for hotspot or Wi-Fi connection
+          </div>
+        </div>
+        <div class="mediumtext margintop">
+          Ensure both devices are connected to the same network before you continue.
+        </div>
+        <div class="mediumtext margintop">
+          The seller will generate the invoice by tapping the <strong>Generate Invoice Button</strong> then<br />
+          1. Input the amount the buyer is to pay <br />
+          2. Show the buyer his/her <strong>payment details</strong>, either<br />
+          a. The Barcode to scan<br />
+          or <br />
+          b. The Payment Code to type<br />
+        </div>
+        <div class="mediumtext margintop">
+          The buyer will make payment by tapping the <strong>Make Payment Button</strong> and will choose the option of
+          <br />
+          1. Scan the seller's barcode<br />
+          or <br />
+          2. Type the seller's payment code<br />
+          <br />
+          then verify the amount by typing your personal transaction pin and Pay
+        </div>
+      </div>
+
+      <div id="paymentInfo" class="center hide">
+        <ion-card *ngIf="createdCode" class="double-margin-horizontal cardcode">
+          <p class="center bold">Scan the Code below to pay</p>
+          <ngx-qrcode [qrc-element-type]="url" [qrc-value]="createdCode"></ngx-qrcode>
+        </ion-card>
+
+        <ion-card *ngIf="createdCode" class="double-margin-horizontal cardcode margintop">
+          <p class="center bold">Type the Details below to pay</p>
+          <ion-item>
+            <span class="smalltext">Payment Code:</span>
+          </ion-item>
+          <ion-item>
+            <span class="mediumtext"><strong>{{SellerEncryptedPaymentCode}}</strong></span>
+          </ion-item>
+        </ion-card>
+
+
+        <ion-card *ngIf="scannedCode" class="double-margin-horizontal cardcode margintop">
+          <p class="center bold">Scanned Payment Details </p>
+          <ion-item>
+            <span class="smalltext">Payment Code:</span>
+          </ion-item>
+          <ion-item>
+            <span class="mediumtext"><strong>{{sepc}}</strong></span>
+          </ion-item>
+        </ion-card>
+      </div>
+
+
+      <div class="center payoption">
+        <span class="center hide bold mini-padding" id="acceptedText"></span>
+        <div class="poyoptioncont">
+          <div class="left marginleft">
+            <button ion-button round class="recieveround " (click)="generatePaymentDetails()">
+              <ion-icon name="arrow-round-down"></ion-icon>
+            </button>
+            <div class="greentext">
+              Generate Invoice <br />(<strong>As Seller</strong>)
+            </div>
+          </div>
+          <div class="right marginright">
+            <button ion-button round class="payround" (click)="selectPaymentOption()">
+              <ion-icon name="arrow-round-up"></ion-icon>
+            </button>
+            <div class="redtext">
+              Make Payment <br />(<strong>As Buyer</strong>)
+            </div>
+          </div>
+          <div style="clear: both;"></div>
+        </div>
+      </div>
+
+    </ion-card-content>
+  </ion-card>
+  </div>
+  
+</ion-content>
+
+

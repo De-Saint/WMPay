@@ -1,0 +1,33 @@
+page-reset-user-pin {
+    .splash-bg2 {
+        position: relative;
+        background: url('../assets/imgs/wealth-2.png') no-repeat transparent;
+        background-size: cover;
+        height: 20%;
+        z-index: 1;
+        background-repeat: repeat-x;
+        animation: animatedBackground 40s linear infinite;
+      }
+      .splash-info {
+        position: relative;
+        z-index: 2;
+        margin-top: -34px;
+      }
+      .splash-logo {
+        background-size: 100%;
+        width: 6em;
+        height: 6em;
+        margin-left: 1.2em;
+        margin-top: -1em;
+        overflow: hidden;
+      }
+      .splash-intro {
+        margin-top: 3em;
+        margin-right: 1em;
+      }
+      img {
+        // max-height: 100%;
+        border: 0;
+        height: 100%;
+      }
+}

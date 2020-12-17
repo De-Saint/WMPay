@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>CashOut</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <super-tabs
+  tabsPlacement="top" 
+  [config]="{ sideMenu: 'left' }" 
+  toolbarBackground="light" 
+  toolbarColor="dark" 
+  indicatorColor="dark"
+  *ngIf="pages.length > 1"
+    (tabSelect)="onTabSelect($event)">
+    <!-- <super-tab class="" *ngFor="let page of pages" [root]="page.pageName" [icon]="page.icon" [id]="page.id"></super-tab> -->
+    <super-tab class="" *ngFor="let page of pages" [title]="page.title" [root]="page.pageName" [id]="page.id"></super-tab>
+  </super-tabs>
+</ion-content>

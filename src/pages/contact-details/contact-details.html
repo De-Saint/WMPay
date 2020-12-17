@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Contact Details</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <div class="splash-bg2"></div>
+    <div class="splash-info">
+      <div class="splash-logo left round">
+        <img src="assets/imgs/icon.png" />
+      </div>
+    </div>
+    <div style="clear:both;"></div>
+    <div class="half-padding-horizontal">
+      <div class="largetext">{{details?.user_name}}</div>
+      <div class="greytext left mb-3">{{details?.usertype}}</div>
+      <div style="clear:both;"></div>
+    <div class="card bg-white mb-3">
+      <div class="card-header text-left text-white bold bg-dark">Email:</div>
+      <div class="card-body">
+        <div class="card-title left pr-3"><i class="fa fa-envelope fa-fw fa-1x pt-3"></i></div>
+        <div class="card-title bold mt-1 pt-1">{{details?.email}}</div>
+      </div>
+    </div>
+    <div class="card bg-white mb-3">
+      <div class="card-header text-left bold bg-warning">Phone:</div>
+      <div class="card-body">
+        <div class="card-title left pr-3"><i class="fa fa-phone fa-fw fa-1x pt-3"></i></div>
+        <div class="card-title bold mt-1 pt-1">{{details?.phone_number}}</div>
+      </div>
+    </div>
+    <div class="card bg-white mb-3">
+      <div class="card-header text-left text-white bold bg-success">Date Joined:</div>
+      <div class="card-body">
+        <div class="card-title left pr-3"><i class="fa fa-calendar fa-fw fa-1x pt-3"></i></div>
+        <div class="card-title  bold mt-1 pt-1">{{details?.date_joined}}</div>
+      </div>
+    </div>
+    <div class="card bg-white mb-3">
+        <div class="card-header text-left text-white bold bg-primary">Gender:</div>
+        <div class="card-body">
+          <div class="card-title left pr-3"><i class="fa fa-male fa-fw fa-1x pt-3"></i></div>
+          <div class="card-title bold mt-1 pt-1">{{details?.sex}}</div>
+        </div>
+      </div>
+  </div>
+</ion-content>

@@ -1,0 +1,48 @@
+<ion-content padding>
+  <div class="dropdown-content-body dropdown-scrollable ">
+      <ul class="media-list mt-2" *ngFor="let transfer of transfers" (click)="onGotoDetails(transfer)">
+        
+        
+        <li class="media mb-3"  *ngIf="transfer.FromUserID !== userid">
+          <div class="position-relative mr-3 rounded-circle bg-success type1">
+            <div class="rounded-circle text-center margintop"><i class="fa fa-exchange normaltext text-white"></i></div>
+          </div>
+          <div class="media-body read">
+            <div class="media-title">
+              <a href="#">
+                <span class="font-weight-semibold text-dark">Transfer</span>
+                <span class="float-right font-size-sm text-success">{{transfer.Amount | currency:
+                  'NGN': '1.2-2'}}</span>
+              </a>
+            </div>
+  
+            <span class="text-muted">{{transfer.Comment}}</span>
+          </div>
+        </li>
+
+
+
+
+        <li class="media mb-3" *ngIf="transfer.ToUserID !== userid">
+          <div class="position-relative mr-3 rounded-circle bg-danger type1">
+            <div class="rounded-circle text-center margintop"><i class="fa fa-exchange normaltext text-white"></i></div>
+          </div>
+          <div class="media-body read">
+            <div class="media-title ">
+              <a href="#">
+                <span class="font-weight-semibold text-dark">Transfer</span>
+                <span class="float-right font-size-sm text-danger">{{transfer.Amount | currency:
+                  'NGN': '1.2-2'}}</span>
+              </a>
+            </div>
+  
+            <span class="text-muted">{{transfer.Comment}}</span>
+          </div>
+        </li>
+      </ul>
+      <div class="marginleft paddingleft marginright paddingright marginbottom margintop" *ngIf="noofflinetransfer === 'noofflinetransfer'">
+          No Offline Transactions
+        </div>
+    </div>
+   
+</ion-content>

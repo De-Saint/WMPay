@@ -1,0 +1,51 @@
+page-profile-tab {
+    .splash-bg2 {
+        position: relative;
+        background: url('../assets/imgs/wealth-2.png') no-repeat transparent;
+        background-size: cover;
+        height: 20%;
+        z-index: 1;
+        background-repeat: repeat-x;
+        animation: animatedBackground 40s linear infinite;
+      }
+      .splash-info {
+        position: relative;
+        z-index: 2;
+        margin-top: -34px;
+      }
+      .splash-logo {
+        background-size: 100%;
+        width: 6em;
+        height: 6em;
+        margin-left: 1.2em;
+        margin-top: -1em;
+        overflow: hidden;
+      }
+      .splash-intro {
+        margin-top: 3em;
+        margin-right: 1em;
+      }
+      img {
+        // max-height: 100%;
+        border: 0;
+        height: 100%;
+      }
+      .form-control {
+        display: block;
+        width: 100%;
+        height: calc(1.5em + 0.75rem + 2px);
+        padding: 0.375rem 0.75rem;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #fff !important;
+        border-radius: 0.25rem;
+        -webkit-transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+        transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+    }
+}

@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Fund Account</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="card card-header text-center">
+    Fund My Device Offline Account
+  </div>
+  <form [formGroup]="slideFundForm" novalidate class="half-margintop">
+    <div class="form-group input-group-lg mt-3 mb-3">
+      <label for="amount">Amount</label>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="fa fa-sort-numeric-asc slightly-largetext"></i></span>
+        </div>
+        <input formControlName="amount" name="amount" #myBudget required placeholder="Enter the Transaction Amount"
+          class="form-control form-control-lg slightly-largetext" maxlength="6"
+          (input)="myBudget.value = format(slideFundForm.value.amount)">
+        <div class="input-group-append">
+          <span class="input-group-text slightly-largetext">00</span>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-3">
+      <button class="btn btn-secondary btn-block btn-lg slightly-largetext" (click)="onCheckPin()"
+        type="submit">Continue</button>
+    </div>
+  </form>
+</ion-content>

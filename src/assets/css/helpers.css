@@ -1,0 +1,859 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 22-Nov-2016, 15:02:33
+    Author     : Stephen
+*/
+.hideall {
+  visibility: hidden !important;
+}
+
+.bold {
+  font-weight: bold !important;
+}
+
+.underline {
+  text-decoration: underline !important;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.lowercase {
+  text-transform: lowercase;
+}
+
+.primaryborder {
+  border: 1px solid #357EC7 !important;
+}
+
+.whiteborder {
+  border: 1px solid #fff !important;
+}
+
+.border {
+  border: 1px solid #333 !important;
+}
+
+.bordergrey {
+  border: 1px solid #ddd !important;
+}
+
+.bordergreen {
+  border: 1px solid #093 !important;
+}
+
+.borderblack {
+  border: 1px solid #000 !important;
+}
+
+.maximumwidth {
+  max-width: 100%;
+}
+
+.border-vertical {
+  border-top: 1px solid #333 !important;
+  border-bottom: 1px solid #333 !important;
+}
+
+.thin-border {
+  border: thin !important;
+}
+
+.bottom {
+  bottom: 0 !important;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.noborder {
+  border: none !important;
+}
+
+.redborder {
+  border-color: #f03 !important;
+  border-width: 2px !important;
+}
+
+.borderleft {
+  border-left: 1px solid !important;
+}
+
+.thinkborderleft {
+  border-left: 2px solid #357EC7 !important;
+}
+
+.noleftborder {
+  border-left: none !important;
+}
+
+.borderright {
+  border-right: 1px solid !important;
+}
+
+.norightborder {
+  border-right: none !important;
+}
+
+.bordertop {
+  border-top: 1px solid !important;
+}
+
+.whitebordertop {
+  border-top: 1px solid #fff !important;
+}
+
+.nobordertop {
+  border-top: none !important;
+}
+
+.borderbottom {
+  border-bottom: 1px solid !important;
+}
+
+.noborderbottom {
+  border-bottom: none !important;
+}
+
+.lightborder {
+  border-color: #ddd !important;
+}
+
+.darkborder {
+  border-color: #333 !important;
+}
+
+.greyborder {
+  border-color: #777 !important;
+}
+
+.ashborder {
+  border-color: #aaa !important;
+}
+
+.thin {
+  font-weight: 100 !important;
+}
+
+.thickbluetext {
+  color: #036;
+}
+
+.nomargin {
+  margin: 0 !important;
+}
+
+.margin {
+  margin: 1em !important;
+}
+
+.margin-vertical {
+  margin-top: 1em !important;
+  margin-bottom: 1em !important;
+}
+
+.margin-horizontal {
+  margin-left: 1em !important;
+  margin-right: 1em !important;
+}
+
+.double-margin-horizontal {
+  margin-left: 2em !important;
+  margin-right: 2em !important;
+}
+.double-marginleft {
+  margin-left: 2em !important;
+}
+
+.half-margin-vertical {
+  margin-top: .5em !important;
+  margin-bottom: .5em !important;
+}
+
+.margintop {
+  margin-top: 1em !important;
+}
+
+.double-margintop {
+  margin-top: 2em !important;
+}
+
+.double-marginbottom {
+  margin-bottom: 2em !important;
+}
+
+.half-margintop {
+  margin-top: 0.5em !important;
+}
+
+.mini-margin {
+  margin-top: 0.2em !important;
+  margin-left: 0.2em !important;
+  margin-right: 0.2em !important;
+  margin-bottom: 0.2em !important;
+}
+
+.half-margin {
+  margin-top: 0.5em !important;
+  margin-left: 0.5em !important;
+  margin-right: 0.5em !important;
+  margin-bottom: 0.5em !important;
+}
+
+.mini-margintop {
+  margin-top: 0.2em !important;
+}
+
+.neg-margintop {
+  margin-top: -1em !important;
+}
+
+.neg-half-margintop {
+  margin-top: -0.5em !important;
+}
+
+.nomargintop {
+  margin-top: 0 !important;
+}
+
+.marginbottom {
+  margin-bottom: 1em !important;
+}
+
+.half-marginbottom {
+  margin-bottom: 0.5em !important;
+}
+
+.mini-marginbottom {
+  margin-bottom: 0.2em !important;
+}
+
+.mini-marginleft {
+  margin-left: 0.1em !important;
+}
+
+.mini-marginright {
+  margin-right: 0.1em !important;
+}
+
+.neg-marginbottom {
+  margin-bottom: -1em !important;
+}
+
+.neg-marginleft {
+  margin-left: -1em !important;
+}
+
+.neg-half-marginbottom {
+  margin-bottom: -0.5em !important;
+}
+
+.neg-half-marginleft {
+  margin-left: -0.5em !important;
+}
+
+.neg-half-marginright {
+  margin-right: -0.5em !important;
+}
+
+.neg-half-margin-vertical {
+  margin-bottom: -0.5em !important;
+  margin-top: -0.5em !important;
+}
+
+.neg-mini-margin-vertical {
+  margin-bottom: -0.2em !important;
+  margin-top: -0.2em !important;
+}
+.neg-half-margin-horizontal {
+  margin-left: -0.5em !important;
+  margin-right: -0.5em !important;
+}
+
+.neg-mini-margin-horizontal {
+  margin-left: -0.2em !important;
+  margin-right: -0.2em !important;
+}
+
+.nomarginbottom {
+  margin-bottom: 0 !important;
+}
+
+.marginleft {
+  margin-left: 1em !important;
+}
+
+.extramarginleft {
+  margin-left: 1.5em !important;
+}
+.slightly-extra-marginleft{
+  margin-left: 1.7em !important;
+}
+.half-marginleft {
+  margin-left: 0.5em !important;
+}
+
+.nomarginleft {
+  margin-left: 0 !important;
+}
+
+.neg-double-marginleft {
+  margin-left: -2em !important;
+}
+
+.neg-double-margintop {
+  margin-top: -2em !important;
+}
+
+.neg-marginright {
+  margin-right: -1em !important;
+}
+
+.half-neg-marginleft {
+  margin-left: -.5em !important;
+}
+
+.marginright {
+  margin-right: 1em !important;
+}
+
+.half-marginright {
+  margin-right: 0.5em !important;
+}
+
+.nomarginright {
+  margin-right: 0 !important;
+}
+
+.nopadding {
+  padding: 0 !important;
+}
+
+.norightpadding {
+  padding-right: 0 !important;
+}
+
+.noleftpadding {
+  padding-left: 0 !important;
+}
+
+.padding {
+  padding: 1em !important;
+}
+
+.padding-vertical {
+  padding-top: 1em !important;
+  padding-bottom: 1em !important;
+}
+
+.padding-horizontal {
+  padding-left: 1em !important;
+  padding-right: 1em !important;
+}
+
+.double-padding-horizontal {
+  padding-left: 2em !important;
+  padding-right: 2em !important;
+}
+
+.half-padding {
+  padding: 0.5em !important;
+}
+
+.mini-padding {
+  padding: 0.2em !important;
+}
+
+.paddingtop {
+  padding-top: 1em !important;
+}
+
+.half-paddingtop {
+  padding-top: 0.5em !important;
+}
+
+.paddingbottom {
+  padding-bottom: 1em !important;
+}
+
+.half-paddingbottom {
+  padding-bottom: 0.5em !important;
+}
+
+.paddingleft {
+  padding-left: 1em !important;
+}
+
+.half-paddingleft {
+  padding-left: 0.5em !important;
+}
+
+.paddingright {
+  padding-right: 1em !important;
+}
+
+.half-paddingright {
+  padding-right: 0.5em !important;
+}
+
+.half-padding-vertical {
+  padding-top: 0.5em !important;
+  padding-bottom: 0.5em !important;
+}
+
+.half-padding-horizontal {
+  padding-left: 0.5em !important;
+  padding-right: 0.5em !important;
+}
+
+.mini-padding-vertical {
+  padding-top: 0.2em !important;
+  padding-bottom: 0.2em !important;
+}
+
+.mini-padding-horizontal {
+  padding-left: 0.2em !important;
+  padding-right: 0.2em !important;
+}
+
+.closespaceup {
+  margin-top: -0.5em !important;
+}
+
+.smalltext {
+  font-size: 0.7em !important;
+}
+
+.smallertext {
+  font-size: 0.5em !important;
+}
+
+.mediumtext {
+  font-size: 0.8em !important;
+}
+
+.normaltext {
+  font-size: 1em !important;
+}
+
+.largetext {
+  font-size: 1.5em !important;
+}
+
+.slightly-largetext {
+  font-size: 1.2em !important;
+}
+
+.doubletext {
+  font-size: 2em !important;
+}
+
+.extralargetext {
+  font-size: 2.5em !important;
+}
+
+.center {
+  text-align: center !important;
+  margin: auto !important;
+}
+
+.wide {
+  width: 100% !important;
+}
+
+.height {
+  height: 100px !important;
+}
+
+.imagebox {
+  height: 110px !important;
+  background-size: 100%;
+  background-position: center;
+  overflow: hidden;
+  background-repeat: no-repeat;
+}
+
+.left {
+  float: left !important;
+}
+
+.right {
+  float: right !important;
+}
+
+.halfwide {
+  width: 49% !important;
+}
+
+.reducedhalfwide {
+  width: 15% !important;
+}
+
+.miniwide {
+  width: 30% !important;
+}
+
+.miniwidedrop {
+  width: 33.5% !important;
+}
+
+.secondminiwidedrop {
+  width: 112% !important;
+}
+
+.threequarterwide {
+  width: 75% !important;
+}
+
+.threequarterWide {
+  width: 85% !important;
+}
+
+.threequarterwider {
+  width: 83% !important;
+}
+
+.threequarterWider {
+  width: 93% !important;
+}
+
+.threequarterWIDER {
+  width: 96% !important;
+}
+
+.row {
+  margin: 0.5em 0 !important;
+  line-height: 1em !important;
+}
+
+.toprow {
+  margin: 0!important;
+  line-height: 1em !important;
+}
+
+.smallrow {
+  line-height: 0.2em !important;
+}
+
+.scroll {
+  overflow: auto !important;
+}
+
+.cursor {
+  cursor: pointer !important;
+}
+
+.hide {
+  visibility: hidden !important;
+  display: none !important;
+}
+
+.grey {
+  background-color: #666 !important;
+  border-color: #555 !important;
+}
+
+.lightgrey {
+  background-color: #eee !important;
+  border-color: #eee !important;
+  color: #ddd
+}
+
+#meter {
+  width: 50%;
+  height: 5px;
+}
+
+.greytext {
+  color: #666 !important;
+}
+
+.ash {
+  background-color: #aaa !important;
+  border-color: #999 !important;
+}
+
+.ashtext {
+  color: #aaa !important;
+}
+
+.silver {
+  background-color: #eee !important;
+  border-color: #ddd !important;
+}
+
+.silvertext {
+  color: #eee !important;
+}
+
+.blacktext {
+  color: #333 !important;
+}
+
+.transparenttext {
+  color: transparent !important;
+}
+
+.redtext {
+  color: #f03 !important;
+}
+
+.yellowtext {
+  color: #ffff33 !important;
+}
+
+.greentext {
+  color: #093 !important;
+}
+
+.white {
+  background-color: #fff !important;
+}
+
+.whitetext {
+  color: #fff !important;
+}
+
+.bluetext {
+  color: #069 !important;
+}
+
+.greenbtn {
+  background-color: #093 !important;
+  color: #fff !important;
+  border: 1px solid #093 !important;
+}
+
+
+.bluebtn {
+  background-color: #036 !important;
+  color: #fff !important;
+  border: 1px solid #036 !important;
+}
+
+
+.transparentbtn {
+  background-color: transparent !important;
+  border-color: transparent !important;
+}
+
+.redbtn {
+  background-color: #f03 !important;
+  color: #fff !important;
+  border: 1px solid #f03 !important;
+}
+
+
+.pinkbtn {
+  background-color: #FF5375 !important;
+  color: #fff !important;
+  border: 1px solid #FF5375 !important;
+}
+
+
+.greybtn {
+  background-color: #777 !important;
+  color: #fff !important;
+  border: 1px solid #666 !important;
+}
+
+
+.ashbtn {
+  background-color: #aaa !important;
+  color: #fff !important;
+  border: 1px solid #999 !important;
+}
+
+
+.lightbtn {
+  background-color: #eee !important;
+  color: #777 !important;
+  border: 1px solid #ddd !important;
+}
+
+
+.blackbtn {
+  background-color: #333 !important;
+  color: #fff !important;
+  border: 1px solid #333 !important;
+}
+
+
+.whitebtn {
+  background-color: #fff !important;
+  color: #333 !important;
+  cursor: pointer;
+}
+
+.goldbtn {
+  background-color: #fc3 !important;
+  color: #333 !important;
+  border: 1px solid #fc3 !important;
+}
+
+
+.bluebtn {
+  background-color: #3cf !important;
+  color: #fff !important;
+  border: 1px solid #3cf !important;
+}
+
+
+.parts {
+  display: inline-block !important;
+  vertical-align: middle !important;
+}
+
+.parts-top {
+  display: inline-block !important;
+  vertical-align: top !important;
+}
+
+.box {
+  padding: 4em 8em;
+}
+
+.textDiv {
+  position: relative;
+  margin-bottom: 20px;
+  line-height: 3em;
+  font-weight: 100;
+}
+
+.textdesc {
+  position: absolute;
+  top: 5px;
+  left: 5%;
+  line-height: 0.5em;
+  font-size: 0.8em;
+}
+
+.txt {
+  border: none;
+  padding: 0.3em;
+  border-left: 1px solid #357EC7;
+  border-right: 1px solid #357EC7;
+  font-size: 1.5em;
+  color: #000;
+  background-color: #fff;
+}
+
+
+.txt:disabled {
+  border-color: #ddd;
+}
+
+.btn {
+  font-size: 1em;
+  padding: 0.6em 0;
+  cursor: pointer;
+}
+
+.radius {
+  border-radius: 10px;
+}
+
+.minibtn {
+  font-size: 1em;
+  padding: 0.3em 0;
+  cursor: pointer;
+}
+
+.linkbtn {
+  cursor: pointer;
+}
+
+
+
+.round {
+  border-radius: 50%;
+}
+
+.lineheight {
+  line-height: 200%;
+}
+
+.wrap {
+  white-space: pre-wrap;
+}
+
+.faGreen {
+  color: #28a54c;
+}
+
+.faOrange {
+  color: #ff6600;
+}
+
+.faLightBlue {
+  color: #31C0E6;
+}
+
+.faYellow {
+  color: #f2c100;
+}
+
+.faPrimary {
+  color: #357EC7;
+}
+
+#hangmore {
+  position: absolute;
+  right: 0.3em;
+  z-index: 10000
+}
+
+.hangmore2 {
+  position: fixed;
+  right: 0.3em;
+  z-index: 10000
+}
+
+.bookhangericon {
+  position: absolute;
+  left: 0.5em;
+}
+
+.cover {
+  position: fixed;
+  top: 15em;
+  left: 0;
+  right: 0;
+  bottom: 14em;
+  background-color: rgba(53, 126, 199, 0.8);
+}
+
+.panelClose {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 0.5em 0.7em !important;
+  font-size: 1em;
+  font-family: Arial;
+  cursor: pointer;
+}
+
+#container {
+  padding: 3em 3em;
+}
+
+#subcommentcontent {
+  height: 90px;
+  overflow-y: auto;
+}
+
+#commentcontent {
+  height: 120px;
+  overflow-y: auto;
+}
+
+.commentcontent {
+  height: 120px;
+  overflow-y: auto;
+}
